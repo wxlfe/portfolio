@@ -18,19 +18,19 @@ const Header = ({ siteTitle }) => (
           <li>
             <Link
               to="/experience"
-              className={window.location.href.includes('experience') ? 'highlighted' : 'nav-link'}
+              className={location.href.includes('experience') ? 'highlighted' : 'nav-link'}
               >Experience</Link>
           </li>
           <li>
             <Link
               to="/skills"
-              className={window.location.href.includes('skills') ? 'highlighted' : 'nav-link'}
+              className={location.href.includes('skills') ? 'highlighted' : 'nav-link'}
               >Skills</Link>
           </li>
           <li>
             <Link
               to="/projects"
-              className={window.location.href.includes('projects') ? 'highlighted' : 'nav-link'}
+              className={location.href.includes('projects') ? 'highlighted' : 'nav-link'}
               >My Work</Link>
           </li>
         </ul>
