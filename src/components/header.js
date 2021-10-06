@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useLocation } from "@reach/router"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -18,19 +19,19 @@ const Header = ({ siteTitle }) => (
           <li>
             <Link
               to="/experience"
-              className={location.href.includes('experience') ? 'highlighted' : 'nav-link'}
+              className={useLocation().pathname.includes('experience') ? 'highlighted' : 'nav-link'}
               >Experience</Link>
           </li>
           <li>
             <Link
               to="/skills"
-              className={location.href.includes('skills') ? 'highlighted' : 'nav-link'}
+              className={useLocation().pathname.includes('skills') ? 'highlighted' : 'nav-link'}
               >Skills</Link>
           </li>
           <li>
             <Link
               to="/projects"
-              className={location.href.includes('projects') ? 'highlighted' : 'nav-link'}
+              className={useLocation().pathname.includes('projects') ? 'highlighted' : 'nav-link'}
               >My Work</Link>
           </li>
         </ul>
