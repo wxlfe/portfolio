@@ -1,28 +1,40 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const IndexPage = () => (
+export const query = graphql`
+{
+  sanityHomePage {
+    title
+    subtitle
+    profilePhoto {
+      asset {
+        gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+      }
+    }
+  }
+}
+`;
+
+const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    <div style={{
+      display: 'grid',
+      alignItems: 'center',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'
+    }}>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', textAlign: 'center', padding: '1rem' }}>
+        <GatsbyImage image={ data?.sanityHomePage?.profilePhoto?.asset?.gatsbyImageData } alt='Profile Photo' objectFit="scale-down" style={{ maxHeight: '6rem', maxWidth: '6rem' }}/>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <h1>{ data.sanityHomePage.title }</h1>
+        <h3>{ data.sanityHomePage.subtitle }</h3>
+      </div>
+    </div>
   </Layout>
 )
 

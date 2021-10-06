@@ -1,16 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;700&display=swap');
+
+:root {
+  --accent: #d1ad54;
+  --background: #282828;
+  --foreground: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #d1ad54;
+    --background: #282828;
+    --foreground: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent: #d1ad54;
+    --background: #ffffff;
+    --foreground: #282828;
+  }
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
+  font: 112.5%/1.45em 'Lato', sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
 body {
+  background: var(--background);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: var(--foreground);
+  font-family: 'Lato', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -19,13 +44,21 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
+header .highlighted {
+  border-bottom: 2px solid var(--accent);
+}
+
+header .nav-link:hover {
+  border-bottom: 2px solid var(--foreground);
+}
+
 article,
 aside,
 details,
 figcaption,
 figure,
 footer,
-header,
 main,
 menu,
 nav,
@@ -51,6 +84,7 @@ template {
   display: none;
 }
 a {
+  color: var(--accent);
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -81,7 +115,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Raleway', 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -89,8 +123,8 @@ h1 {
   line-height: 1.1;
 }
 mark {
-  background-color: #ff0;
-  color: #000;
+  background-color: var(--accent);
+  color: var(--foreground);
 }
 small {
   font-size: 80%;
@@ -151,7 +185,7 @@ hr {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
+  background: var(--foreground);
   border: none;
   height: 1px;
 }
@@ -260,7 +294,7 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Raleway', 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -277,7 +311,7 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Raleway', 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -294,7 +328,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Raleway', 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -311,7 +345,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Raleway', 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -328,7 +362,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Raleway', 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -406,7 +440,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  background: var(--foreground);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
