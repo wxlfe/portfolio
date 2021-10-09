@@ -11,6 +11,7 @@ export const query = graphql`
       id
       title
       year
+      link
       description
       image {
         asset {
@@ -31,7 +32,10 @@ const ProjectPage = (context) => (
   <Layout>
     <Seo title={`Project - ${context?.pageResources?.json?.data?.sanityProject?.title}`} />
     <h1>Project - {context?.pageResources?.json?.data?.sanityProject?.title}</h1>
-    <h2>{context?.pageResources?.json?.data?.sanityProject?.year}</h2>
+    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+      <h2>{context?.pageResources?.json?.data?.sanityProject?.year}</h2>
+      <a href={context?.pageResources?.json?.data?.sanityProject?.link}>Check it out here {`\u2192`}</a>
+    </div>
     <GatsbyImage image={context?.pageResources?.json?.data?.sanityProject?.image?.asset?.gatsbyImageData}/>
     <p>{context?.pageResources?.json?.data?.sanityProject?.description}</p>
   </Layout>
