@@ -67,11 +67,13 @@ const ExperiencePage = ({ data }) => {
                 gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
                 marginBottom: '3rem'
               }}>
-                  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-                    <div style={{ maxWidth: '10rem', padding: '1rem', backgroundColor: 'white', borderRadius: '1rem' }}>
-                      <GatsbyImage alt={`${job.company} logo`} image={job.companyLogo.asset.gatsbyImageData} backgroundColor="white" style={{ maxWidth: '10rem' }}/>
-                    </div>
-                  </div>
+                {job?.companyLogo?.asset?.gatsbyImageData
+                 ? <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                 <div style={{ maxWidth: '10rem', padding: '1rem', backgroundColor: 'white', borderRadius: '1rem' }}>
+                   <GatsbyImage alt={`${job?.company} logo`} image={job?.companyLogo?.asset?.gatsbyImageData} backgroundColor="white" style={{ maxWidth: '10rem' }}/>
+                 </div>
+               </div>
+                 : null}
                   <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', margin: '1em' }}>
                       <h2 style={{ borderBottom: '4px solid var(--accent)' }}>{job.title}</h2>
