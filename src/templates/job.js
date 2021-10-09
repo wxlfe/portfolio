@@ -34,9 +34,11 @@ const JobPage = (context) => (
         justifyContent: 'start',
         marginBottom: '3rem',
     }}>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '1rem', backgroundColor: 'white', borderRadius: '1rem' }}>
+      {!!context?.pageResources?.json?.data?.sanityJob?.companyLogo?.asset?.gatsbyImageData
+       ? <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '1rem', backgroundColor: 'white', borderRadius: '1rem' }}>
             <GatsbyImage image={context?.pageResources?.json?.data?.sanityJob?.companyLogo.asset.gatsbyImageData} alt={context?.pageResources?.json?.data?.sanityJob?.company} objectFit="scale-down" style={{ maxHeight: '6rem', maxWidth: '6rem' }}/>    
-        </div>
+          </div>
+       : null}
         <div>
             <h1 style={{ margin: '1rem', borderBottom: '4px solid var(--accent)' }}>{context?.pageResources?.json?.data?.sanityJob?.title}</h1>
             <h5 style={{ margin: '1rem' }}>{context?.pageResources?.json?.data?.sanityJob?.startDate} - {context?.pageResources?.json?.data?.sanityJob?.endDate}</h5>
