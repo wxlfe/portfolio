@@ -18,10 +18,18 @@ const ProjectCard = ({ project }) => (
         marginBottom: '0',
         textAlign: 'center'
       }}>{project?.title}</h3>
-      <h4 style={{
-        color: 'var(--foreground)',
-        textAlign: 'center'
-      }}>{project?.year}</h4>
+      {
+        !!project?.job?.company
+        ? (<h4 style={{
+          color: 'var(--foreground)',
+          textAlign: 'center'
+        }}>{project?.year} at {project?.job?.company}</h4>)
+        : (<h4 style={{
+            color: 'var(--foreground)',
+            textAlign: 'center'
+          }}>{project?.year}</h4>)
+      }
+      
       <GatsbyImage alt={`${project?.title} Image`} image={project?.image?.asset?.gatsbyImageData}/>
     </div>
   </Link>

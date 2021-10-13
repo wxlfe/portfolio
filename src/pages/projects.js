@@ -16,6 +16,9 @@ export const query = graphql`
         slug {
           current
         }
+        job {
+          company
+        }
         image {
           asset {
             gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
