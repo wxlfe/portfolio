@@ -76,12 +76,11 @@ const ExperiencePage = ({ data }) => {
                  : null}
                   <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', margin: '1em' }}>
-                      <h2 style={{ borderBottom: '4px solid var(--accent)' }}>{job.title}</h2>
+                      <Link to={'/job/' + job?.slug?.current} style={{ color: 'var(--foreground)', textDecoration: 'none' }}>
+                        <h2 style={{ borderBottom: '4px solid var(--accent)' }}>{job.title}</h2>
+                      </Link>
                     </div>
                     <h4>{job.company}, { job.startDate } - { job.endDate }</h4>
-                    <Link to={'/job/' + job?.slug?.current}>
-                      <p>More Information</p>
-                    </Link>
                   </div>
               </div>
             </li>
