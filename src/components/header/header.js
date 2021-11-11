@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import "./header.css"
+import "./header.sass"
 
 const Header = ({ siteTitle }) => (
   <header>
@@ -19,19 +19,19 @@ const Header = ({ siteTitle }) => (
           <li>
             <Link
               to="/experience"
-              className={useLocation().pathname.includes('experience') ? 'highlighted' : 'nav-link'}
+              className={useLocation().pathname.includes('experience') ? 'highlighted nav-link' : 'nav-link'}
               >Experience</Link>
           </li>
           <li>
             <Link
               to="/skills"
-              className={useLocation().pathname.includes('skills') ? 'highlighted' : 'nav-link'}
+              className={useLocation().pathname.includes('skills') ? 'highlighted nav-link' : 'nav-link'}
               >Skills</Link>
           </li>
           <li>
             <Link
               to="/projects"
-              className={useLocation().pathname.includes('projects') ? 'highlighted' : 'nav-link'}
+              className={useLocation().pathname.includes('projects') ? 'highlighted nav-link' : 'nav-link'}
               >My Work</Link>
           </li>
         </ul>
