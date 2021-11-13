@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
     {/* <div className='header-interior'> */}
       <h1>
         <Link to="/">
-          <StaticImage className="logo" src='../images/wxlfe-gold.svg' alt={siteTitle} layout='constrained' placeholder="blurred" objectFit="contain"></StaticImage>
+          <StaticImage className="logo" src='../../images/wxlfe-gold.svg' alt={siteTitle} layout='constrained' placeholder="blurred" objectFit="contain"></StaticImage>
         </Link>
       </h1>
       <input className="menu-btn" type="checkbox" id="menu-btn" />
