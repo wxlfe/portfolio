@@ -1,0 +1,123 @@
+header 
+    width: 100%
+    z-index: 3
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 1rem
+
+    h1 
+        max-width: 5rem
+        margin-bottom: 0
+
+    .menu 
+        margin: 0
+        padding: 0
+        list-style: none
+        overflow: hidden
+        width: 100%
+        color: var(--foreground)
+        clear: both
+        max-height: 0
+        transition: max-height .2s ease-out
+
+
+    .nav-link 
+        color: var(--foreground)
+        display: block
+        margin: 20px 20px
+        text-decoration: none
+        font-size: 1.45rem
+			
+        &:hover
+            border-bottom: 2px solid var(--foreground)
+
+        &.highlighted
+            border-bottom: 2px solid var(--accent)
+
+    .logo
+        max-height: 4rem
+        display: block
+        float: left
+        font-size: 2em
+        text-decoration: none
+  
+    .menu-icon 
+        cursor: pointer
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        padding-top: 1.75rem
+        padding-right: 1rem
+        position: relative
+        user-select: none
+
+        .navicon
+            background: var(--foreground)
+            display: block
+            height: .20rem
+            position: relative
+            transition: background .2s ease-out
+            width: 2rem
+
+            &::before, &::after
+                background: var(--foreground)
+                content: ''
+                display: block
+                height: 100%
+                position: absolute
+                transition: all .2s ease-out
+                width: 100%
+                
+            &::before
+                top: .5rem
+
+            &::after
+                top: -.5rem
+
+        &:checked
+            ~
+                .menu-icon
+                    justify-content: flex-start
+
+    .menu-btn 
+        display: none
+
+        &:checked
+            ~
+                .menu
+                    max-height: 240px
+
+                .menu-icon
+                    .navicon
+                        background: transparent
+
+                        &::before
+                            transform: rotate(-45deg)
+
+                        &::after
+                            transform: rotate(45deg)
+
+                    &:not(.steps)
+                        .navicon
+                            &::before, &::after
+                                top: 0
+
+    @media (min-width: 48em) 
+        li 
+            float: left
+        
+        .menu 
+            clear: none
+            float: right
+            max-height: none
+            width: unset
+        
+        .menu-icon 
+            display: none
+        
+
+        .nav-link, .highlighted 
+            font-size: 1rem
+    
+  
