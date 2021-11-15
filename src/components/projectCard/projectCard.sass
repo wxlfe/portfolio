@@ -3,19 +3,28 @@
 
     .card
         border-radius: 8px
-        padding: 1rem
         margin: 1rem
         box-shadow: 0rem 0rem 0rem 0.1rem var(--accent)
 
         &:hover
             box-shadow: 0rem 0rem 0rem 0.1rem var(--foreground)
 
+        .card-label
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+
         .card-title
             color: var(--foreground)
             text-decoration: none
             margin-bottom: 0
             text-align: center
+            margin-top: 1rem
 
         .card-year
             color: var(--foreground)
             text-align: center
+            margin-bottom: 1rem
+
+        .card-image
+            border-radius: 0 0 8px 8px
