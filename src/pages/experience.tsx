@@ -57,6 +57,7 @@ const ExperiencePage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Experience" />
+      <h1 className='page-title'>Experience</h1>
       <ul style={{ margin: '0' }}>
         {jobs.map(({ node: job }) => (
           

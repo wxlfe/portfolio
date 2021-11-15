@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => (
       </div>
       <div style={{ textAlign: 'center' }}>
         <h1>{ data.sanityHomePage.title }</h1>
-        <h3>{ data.sanityHomePage.subtitle }</h3>
+        <h2>{ data.sanityHomePage.subtitle }</h2>
       </div>
     </div>
   </Layout>
