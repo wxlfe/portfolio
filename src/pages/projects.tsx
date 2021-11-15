@@ -33,7 +33,7 @@ export const query = graphql`
 const ProjectsPage = ({data}) => (
   <Layout>
     <Seo title="My Work" />
-    <h1>My Work</h1>
+    <h1 className='page-title'>My Work</h1>
     <div style={{
       display: 'grid',
       alignItems: 'center',

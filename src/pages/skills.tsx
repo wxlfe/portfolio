@@ -31,6 +31,7 @@ export const query = graphql`
 const SkillsPage = ({ data }) => (
   <Layout>
     <Seo title="Skills" />
+    <h1 className='page-title'>Skills</h1>
     <div style={{
       display: 'grid',
       alignItems: 'center',
