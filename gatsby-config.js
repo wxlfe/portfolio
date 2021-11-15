@@ -49,5 +49,11 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `wxlfe.dev`,
+      },
+    },
   ],
 }
