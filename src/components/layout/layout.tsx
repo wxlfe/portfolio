@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer> */}
-        <Footer style={{ position: 'fixed', bottom: '0' }}/>
+        <Footer/>
       </div>
     </>
   )
