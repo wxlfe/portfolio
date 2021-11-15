@@ -87,7 +87,7 @@ async function createProjectPages (graphql, actions) {
   
         createPage({
           path,
-          component: require.resolve('./src/templates/project.js'),
+          component: require.resolve('./src/templates/project.tsx'),
           context: {id}
         })
       })
@@ -102,7 +102,7 @@ async function createProjectPages (graphql, actions) {
   
         createPage({
           path,
-          component: require.resolve('./src/templates/job.js'),
+          component: require.resolve('./src/templates/job.tsx'),
           context: {id}
         })
       })
@@ -117,7 +117,7 @@ async function createProjectPages (graphql, actions) {
   
         createPage({
           path,
-          component: require.resolve('./src/templates/skill.js'),
+          component: require.resolve('./src/templates/skill.tsx'),
           context: {id}
         })
       })
