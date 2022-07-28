@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => (
       gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'
     }}>
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', textAlign: 'center', padding: '1rem' }}>
-        <GatsbyImage image={ data?.sanityHomePage?.profilePhoto?.asset?.gatsbyImageData } alt='Profile Photo' objectFit="scale-down" style={{ borderRadius: '50% 25%' }}/>
+        <GatsbyImage image={ data?.sanityHomePage?.profilePhoto?.asset?.gatsbyImageData } alt='Profile Photo' objectFit="scale-down" style={{ WebkitBorderRadius: '50%', borderRadius: '50% 25%' }}/>
       </div>
       <div style={{ textAlign: 'center' }}>
         <h1>{ data.sanityHomePage.title }</h1>
