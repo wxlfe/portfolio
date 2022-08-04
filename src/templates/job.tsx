@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage } from 'gatsby-plugin-image'
 
+import SkillPill from "../components/skillPill"
+
 export const query = graphql`
   query pageResources($id: String){
     sanityJob(id: {eq: $id}){
@@ -21,6 +23,17 @@ export const query = graphql`
       }
       startDate
       endDate
+      skills {
+        title
+        skillIcon {
+          asset {
+            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+          }
+        }
+        slug {
+          current
+        }
+      }
     }
   }
 `;
@@ -32,7 +45,6 @@ const JobPage = (context) => (
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'start',
-        marginBottom: '3rem',
     }}>
       {!!context?.pageResources?.json?.data?.sanityJob?.companyLogo?.asset?.gatsbyImageData
        ? <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '1rem', backgroundColor: 'white', borderRadius: '1rem' }}>
@@ -43,6 +55,11 @@ const JobPage = (context) => (
             <h1 style={{ margin: '1rem', borderBottom: '4px solid var(--accent)' }}>{context?.pageResources?.json?.data?.sanityJob?.title}</h1>
             <h5 style={{ margin: '1rem' }}>{context?.pageResources?.json?.data?.sanityJob?.startDate} - {context?.pageResources?.json?.data?.sanityJob?.endDate}</h5>
         </div>
+    </div>
+    <div style={{display: 'flex', flexDirection: 'row'}}>
+      {context?.pageResources?.json?.data?.sanityJob?.skills.map(skill => {
+        return <SkillPill skill={skill}/>
+      })}
     </div>
     <p>{context?.pageResources?.json?.data?.sanityJob?.description[0]?._rawChildren[0]?.text}</p>
   </Layout>
