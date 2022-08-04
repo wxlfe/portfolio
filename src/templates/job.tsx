@@ -56,7 +56,7 @@ const JobPage = (context) => (
             <h5 style={{ margin: '1rem' }}>{context?.pageResources?.json?.data?.sanityJob?.startDate} - {context?.pageResources?.json?.data?.sanityJob?.endDate}</h5>
         </div>
     </div>
-    <div style={{display: 'flex', flexDirection: 'row'}}>
+    <div style={{display: 'flex', flexDirection: 'row', overflowX: 'scroll'}}>
       {context?.pageResources?.json?.data?.sanityJob?.skills.map(skill => {
         return <SkillPill skill={skill}/>
       })}
