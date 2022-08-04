@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage } from 'gatsby-plugin-image'
+import ProjectCard from "../components/projectCard"
 
 export const query = graphql`
   query skillPageResources($id: String){
@@ -20,6 +21,26 @@ export const query = graphql`
           current
         }
         title
+    }
+    allSanityProject(filter: {skills: {elemMatch: {id: {eq: $id}}}}) {
+      edges {
+        node {
+          id
+          title
+          slug {
+            current
+          }
+          job {
+            company
+          }
+          year
+          image {
+            asset {
+              gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -41,6 +62,18 @@ const SkillPage = (context) => (
         </div>
     </div>
     <p>{context?.pageResources?.json?.data?.sanitySkill?.description}</p>
+    <div>
+      <h3 style={{ marginTop: '1rem' }}>Projects Using {context?.pageResources?.json?.data?.sanitySkill?.title}</h3>
+      <div style={{
+      display: 'grid',
+      alignItems: 'center',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'
+    }}>
+      {context?.pageResources?.json?.data?.allSanityProject?.edges.map(project => {
+        return <ProjectCard project={project.node} key={project.node.id}></ProjectCard>
+      })}
+    </div>
+    </div>
   </Layout>
 )
 
