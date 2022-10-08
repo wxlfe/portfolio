@@ -26,9 +26,14 @@ export default function App({ Component, pageProps }: AppProps) {
         link: '#d1ad54',
 
         myColor: '#ff4ecd',
+        background: 'white',
+        text: '#282828',
       },
       space: {},
-      fonts: {},
+      fonts: {
+        sans: "'Helvetica Neue', Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif",
+        mono: "Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono'",
+      },
     },
   });
 
