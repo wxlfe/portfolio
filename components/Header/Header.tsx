@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router';
 import { Avatar, Navbar, Link } from '@nextui-org/react';
 
 const Header = () => {
+  const router = useRouter();
   const collapseItems = ['Experience', 'Skills', 'My Work'];
 
   return (
@@ -9,11 +11,24 @@ const Header = () => {
         <Avatar text='NW' size='xl' />
       </Navbar.Brand>
       <Navbar.Content enableCursorHighlight hideIn='xs' variant='underline'>
-        <Navbar.Link href='/experience' isActive>
+        <Navbar.Link
+          href='/experience'
+          isActive={router.pathname.includes('experience')}
+        >
           Experience
         </Navbar.Link>
-        <Navbar.Link href='/skills'>Skills</Navbar.Link>
-        <Navbar.Link href='/my-work'>My Work</Navbar.Link>
+        <Navbar.Link
+          href='/skills'
+          isActive={router.pathname.includes('skills')}
+        >
+          Skills
+        </Navbar.Link>
+        <Navbar.Link
+          href='/my-work'
+          isActive={router.pathname.includes('my-work')}
+        >
+          My Work
+        </Navbar.Link>
       </Navbar.Content>
       <Navbar.Toggle showIn='xs' aria-label='toggle navigation' />
       <Navbar.Collapse>
