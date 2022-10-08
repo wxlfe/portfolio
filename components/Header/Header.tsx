@@ -1,41 +1,41 @@
-import { useRouter } from 'next/router';
 import { Avatar, Navbar, Link } from '@nextui-org/react';
 
 const Header = () => {
-  const router = useRouter();
-  const collapseItems = ['Experience', 'Skills', 'My Work'];
+  const navigationItems = [
+    {
+      label: 'Experience',
+      slug: 'experience',
+    },
+    {
+      label: 'Skills',
+      slug: 'skills',
+    },
+    {
+      label: 'My Work',
+      slug: 'my-work',
+    },
+  ];
 
   return (
     <Navbar isBordered variant='floating'>
       <Navbar.Brand>
-        <Avatar text='NW' size='xl' />
+        <Link href='/'>
+          <Avatar text='NW' size='xl' />
+        </Link>
       </Navbar.Brand>
       <Navbar.Content enableCursorHighlight hideIn='xs' variant='underline'>
-        <Navbar.Link
-          href='/experience'
-          isActive={router.pathname.includes('experience')}
-        >
-          Experience
-        </Navbar.Link>
-        <Navbar.Link
-          href='/skills'
-          isActive={router.pathname.includes('skills')}
-        >
-          Skills
-        </Navbar.Link>
-        <Navbar.Link
-          href='/my-work'
-          isActive={router.pathname.includes('my-work')}
-        >
-          My Work
-        </Navbar.Link>
+        {navigationItems.map((item, index) => (
+          <Navbar.Link key={item.slug} href={`/${item.slug}`}>
+            {item.label}
+          </Navbar.Link>
+        ))}
       </Navbar.Content>
       <Navbar.Toggle showIn='xs' aria-label='toggle navigation' />
       <Navbar.Collapse>
-        {collapseItems.map((item, index) => (
-          <Navbar.CollapseItem key={item}>
-            <Link color='inherit' href='#'>
-              {item}
+        {navigationItems.map((item) => (
+          <Navbar.CollapseItem key={item.slug}>
+            <Link color='inherit' href={`/${item.slug}`}>
+              {item.label}
             </Link>
           </Navbar.CollapseItem>
         ))}
