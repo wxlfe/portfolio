@@ -1,12 +1,13 @@
-import { Grid, Image, Text } from '@nextui-org/react';
+import { Grid, Image, Spacer, Text } from '@nextui-org/react';
 import { Header } from 'components';
 
 const Index = () => {
   return (
     <>
       <Header />
-      <Grid.Container gap={12} justify='center'>
-        <Grid xs={12} md={6}>
+      <Spacer />
+      <Grid.Container justify='center'>
+        <Grid xs={12} md={6} css={{ padding: '1.1rem' }}>
           <Image
             src='https://github.com/nextui-org/nextui/blob/next/apps/docs/public/nextui-banner.jpeg?raw=true'
             objectFit='none'
@@ -15,7 +16,7 @@ const Index = () => {
             height={300}
           />
         </Grid>
-        <Grid xs={12} md={6}>
+        <Grid xs={12} md={6} css={{ padding: '1.1rem' }}>
           <div>
             <Text h1>Hi, I'm Nate</Text>
             <Text h2>
