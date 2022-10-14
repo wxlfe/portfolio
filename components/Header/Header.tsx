@@ -41,7 +41,7 @@ const Header = () => {
         {navigationItems.map((item, index) => (
           <Navbar.CollapseItem key={index}>
             <Link color='inherit' href={`/${item.slug}`}>
-              <Text>{item.label}</Text>
+              <Text h1>{item.label}</Text>
             </Link>
           </Navbar.CollapseItem>
         ))}
