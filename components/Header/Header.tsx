@@ -1,6 +1,8 @@
-import { Avatar, Navbar, Link } from '@nextui-org/react';
+import { useRouter } from 'next/router';
+import { Avatar, Navbar, Link, Text } from '@nextui-org/react';
 
 const Header = () => {
+  const router = useRouter();
   const navigationItems = [
     {
       label: 'Experience',
@@ -25,17 +27,21 @@ const Header = () => {
       </Navbar.Brand>
       <Navbar.Content enableCursorHighlight hideIn='xs' variant='underline'>
         {navigationItems.map((item, index) => (
-          <Navbar.Link key={item.slug} href={`/${item.slug}`}>
+          <Navbar.Link
+            key={index}
+            href={`/${item.slug}`}
+            isActive={router.pathname.includes(item.slug)}
+          >
             {item.label}
           </Navbar.Link>
         ))}
       </Navbar.Content>
       <Navbar.Toggle showIn='xs' aria-label='toggle navigation' />
       <Navbar.Collapse>
-        {navigationItems.map((item) => (
-          <Navbar.CollapseItem key={item.slug}>
+        {navigationItems.map((item, index) => (
+          <Navbar.CollapseItem key={index}>
             <Link color='inherit' href={`/${item.slug}`}>
-              {item.label}
+              <Text>{item.label}</Text>
             </Link>
           </Navbar.CollapseItem>
         ))}

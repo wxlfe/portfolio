@@ -1,8 +1,10 @@
 import { Grid, Image, Text } from '@nextui-org/react';
+import { Header } from 'components';
 
 const Index = () => {
   return (
     <>
+      <Header />
       <Grid.Container gap={12} justify='center'>
         <Grid xs={12} md={6}>
           <Image
