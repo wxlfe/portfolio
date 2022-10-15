@@ -1,11 +1,10 @@
-import { Header } from 'components';
+import { Layout } from 'components';
 
 const myWork = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <div>my-work</div>
-    </>
+    </Layout>
   );
 };
 

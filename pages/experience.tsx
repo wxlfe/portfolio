@@ -1,11 +1,10 @@
-import { Header } from 'components';
+import { Layout } from 'components';
 
 const experience = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <div>experience</div>
-    </>
+    </Layout>
   );
 };
 

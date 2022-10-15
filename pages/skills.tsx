@@ -1,11 +1,10 @@
-import { Header } from 'components';
+import { Layout } from 'components';
 
 const skills = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <div>skills</div>
-    </>
+    </Layout>
   );
 };
 
