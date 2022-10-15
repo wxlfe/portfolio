@@ -1,11 +1,10 @@
-import { Header, Footer } from 'components';
+import { Header } from 'components';
 
 const Layout = (props) => {
   return (
     <>
       <Header />
       {props.children}
-      <Footer />
     </>
   );
 };

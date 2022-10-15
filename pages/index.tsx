@@ -4,7 +4,6 @@ import { Layout } from 'components';
 const Index = () => {
   return (
     <Layout>
-      <Spacer />
       <Grid.Container justify='center'>
         <Grid xs={12} md={6} css={{ padding: '1.1rem' }}>
           <Image
