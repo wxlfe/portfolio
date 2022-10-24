@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         primaryLightHover: '$green300',
         primaryLightActive: '$green400',
         primaryLightContrast: '$green600',
-        primary: '#4ADE7B',
+        primary: '#d1ad54',
         primaryBorder: '$green500',
         primaryBorderHover: '$green600',
         primarySolidHover: '$green700',
