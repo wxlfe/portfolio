@@ -23,7 +23,7 @@ const Header = () => {
     <Navbar isBordered variant='floating'>
       <Navbar.Brand css={{ flexGrow: 1, flexBasis: 0 }}>
         <Link href='/'>
-          <Avatar text='NW' size='xl' />
+          <Avatar src='/wxlfe-gold.svg' text='NW' size='xl' />
         </Link>
       </Navbar.Brand>
       <Navbar.Content enableCursorHighlight hideIn='xs' variant='underline'>

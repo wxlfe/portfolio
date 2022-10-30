@@ -1,11 +1,12 @@
 import { groq } from 'next-sanity';
 import { sanityClient } from 'sanity';
 
-export const fetchSkill = async (slug) => {
+export const fetchProject = async (slug) => {
   const res = await sanityClient.fetch(groq`
-        *[_type == "skill" && slug.current == "${slug}"]{
+        *[_type == "project" && slug.current == "${slug}"]{
           ...,
-          "projects": *[_type=='project' && references(^._id)]
+          "skills": skills[]->,
+          "job": job->
         }
     `);
 
