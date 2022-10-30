@@ -31,6 +31,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'experience',
+      title: 'Years of Experience',
+      type: 'number',
+    },
+    {
       name: 'certifications',
       title: 'Certifications',
       type: 'text',
