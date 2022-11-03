@@ -13,6 +13,7 @@ const Index = ({ homepage }) => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              margin: '2rem',
             }}
           >
             <Grid.Container justify='center'>
