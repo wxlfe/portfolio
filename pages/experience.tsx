@@ -21,7 +21,7 @@ const experience = ({ experience }) => {
         shadow
         css={{ margin: 'var(--nextui--navbarFloatingMargin)' }}
       >
-        {experience.sort(sortByStartDate).map((job) => {
+        {experience.sort(sortByStartDate).map((job, jobIndex) => {
           return (
             <Collapse
               title={job.title}
@@ -33,6 +33,7 @@ const experience = ({ experience }) => {
                   css={{ maxWidth: '5rem' }}
                 />
               }
+              key={jobIndex}
             >
               <Text>{job.description[0].children[0].text}</Text>
 
@@ -56,12 +57,13 @@ const experience = ({ experience }) => {
                       scrollbarColor: 'transparent',
                     }}
                   >
-                    {job.skills?.map((skill) => {
+                    {job.skills?.map((skill, index) => {
                       return (
                         <div
                           style={{
                             margin: '1rem',
                           }}
+                          key={index}
                         >
                           <SkillPill skill={skill} />
                         </div>
@@ -91,7 +93,11 @@ const experience = ({ experience }) => {
                       scrollbarColor: 'transparent',
                     }}
                   >
-                    {job.projects?.map((project) => {
+                    {job.projects?.map((project, index) => {
+                      const projectWithJob = {
+                        ...project,
+                        job,
+                      };
                       return (
                         <div
                           style={{
@@ -99,8 +105,9 @@ const experience = ({ experience }) => {
                             minWidth: '22rem',
                             maxWidth: '22rem',
                           }}
+                          key={index}
                         >
-                          <ProjectCard project={project} />
+                          <ProjectCard project={projectWithJob} />
                         </div>
                       );
                     })}

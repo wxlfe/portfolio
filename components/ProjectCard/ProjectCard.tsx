@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
                 </Text>
                 <Text color='#f8f8f8' size={12}>
                   {!!project.job
-                    ? `${project.year} at a job`
+                    ? `${project.year} at ${project.job.company}`
                     : `${project.year}`}
                 </Text>
               </Col>
