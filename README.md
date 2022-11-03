@@ -4,7 +4,7 @@ This is my portfolio site, live at [wxlfe.dev](https://wxlfe.dev). If you're her
 
 ## Frontend Architecture
 
-The frontend is built using Next.js with TypeScript. I also used a component library called (NextUI)[https://nextui.org], which is built on Styled Components.
+The frontend is built using Next.js with TypeScript. I also used a component library called [NextUI](https://nextui.org), which is built on Styled Components.
 
 ## CMS
 
