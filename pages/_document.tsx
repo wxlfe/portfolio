@@ -14,7 +14,15 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <Head>{CssBaseline.flush()}</Head>
+        <Head>
+          <script
+            defer
+            data-domain='wxlfe.dev'
+            src='https://plausible.io/js/script.js'
+          ></script>
+
+          {CssBaseline.flush()}
+        </Head>
         <body>
           <Main />
           <NextScript />
