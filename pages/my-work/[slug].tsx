@@ -1,7 +1,6 @@
 import {
   Card,
   Container,
-  Grid,
   Image,
   Modal,
   Row,
@@ -12,8 +11,13 @@ import { Layout, SkillPill } from 'components';
 import { useState } from 'react';
 import { urlFor } from 'sanity';
 import { fetchProject, fetchProjectPaths } from 'utils';
+import { ProjectType } from 'utils/types';
 
-export default function Project({ project }) {
+type Props = {
+  project: ProjectType;
+};
+
+export default function Project({ project }: Props) {
   const [visible, setVisible] = useState(
     project.images.map((image) => {
       return false;
@@ -127,7 +131,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.slug;
-  const project = await fetchProject(id);
+  const project: ProjectType = await fetchProject(id);
   return {
     props: {
       project,

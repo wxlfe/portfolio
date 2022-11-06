@@ -2,6 +2,11 @@ import { Collapse, Container, Image, Row, Text } from '@nextui-org/react';
 import { Layout, ProjectCard, SkillPill } from 'components';
 import { urlFor } from 'sanity';
 import { fetchExperience } from 'utils/fetchExperience';
+import { JobType } from 'utils/types';
+
+type Props = {
+  experience: Array<JobType>;
+};
 
 function sortByStartDate(a, b) {
   if (Number(a.startDate.slice(-2)) > Number(b.startDate.slice(-2))) {
@@ -13,7 +18,7 @@ function sortByStartDate(a, b) {
   return 0;
 }
 
-const experience = ({ experience }) => {
+const experience = ({ experience }: Props) => {
   return (
     <Layout>
       <Collapse.Group
@@ -125,7 +130,7 @@ const experience = ({ experience }) => {
 export default experience;
 
 export const getStaticProps = async () => {
-  const experience = await fetchExperience();
+  const experience: Array<JobType> = await fetchExperience();
   return {
     props: {
       experience,

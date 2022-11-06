@@ -2,8 +2,13 @@ import { Card, Container, Image, Row, Text } from '@nextui-org/react';
 import { Layout, ProjectCard } from 'components';
 import { urlFor } from 'sanity';
 import { fetchSkill, fetchSkillPaths } from 'utils';
+import { SkillType } from 'utils/types';
 
-export default function Skill({ skill }) {
+type Props = {
+  skill: SkillType;
+};
+
+export default function Skill({ skill }: Props) {
   return (
     <Layout>
       <Row
@@ -78,7 +83,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.slug;
-  const skill = await fetchSkill(id);
+  const skill: SkillType = await fetchSkill(id);
   return {
     props: {
       skill,

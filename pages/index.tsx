@@ -2,11 +2,16 @@ import { Grid, Image, Spacer, Text } from '@nextui-org/react';
 import { Layout } from 'components';
 import { urlFor } from 'sanity';
 import { fetchHomepage } from 'utils/fetchHomepage';
+import { Homepage } from 'utils/types';
 
-const Index = ({ homepage }) => {
+type Props = {
+  homepage: Homepage;
+};
+
+const Index = ({ homepage }: Props) => {
   return (
     <Layout>
-      {homepage.map((section, index) => {
+      {homepage.map((section) => {
         return (
           <div
             style={{
@@ -50,7 +55,7 @@ const Index = ({ homepage }) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const homepage = await fetchHomepage();
+  const homepage: Homepage = await fetchHomepage();
   return {
     props: {
       homepage,

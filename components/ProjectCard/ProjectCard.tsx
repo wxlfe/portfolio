@@ -1,7 +1,12 @@
 import { Button, Card, Col, Link, Row, Text } from '@nextui-org/react';
 import { urlFor } from 'sanity';
+import { ProjectType } from 'utils/types';
 
-const ProjectCard = ({ project }) => {
+type Props = {
+  project: ProjectType;
+};
+
+const ProjectCard = ({ project }: Props) => {
   return (
     <Card css={{ w: '100%', h: 'auto' }}>
       <Card.Body css={{ p: 0 }}>

@@ -10,6 +10,11 @@ import {
 import { Layout } from 'components';
 import { urlFor } from 'sanity';
 import { fetchSkills } from 'utils';
+import { CategorizedSkills, SkillType } from 'utils/types';
+
+type Props = {
+  skills: Array<SkillType>;
+};
 
 function sortByExperience(a, b) {
   if (a.experience > b.experience) {
@@ -30,8 +35,8 @@ function groupBy(objectArray, property) {
   }, {});
 }
 
-const skills = ({ skills }) => {
-  const categorizedSkills = groupBy(skills, 'category');
+const skills = ({ skills }: Props) => {
+  const categorizedSkills: CategorizedSkills = groupBy(skills, 'category');
   return (
     <Layout>
       <Text h1 css={{ textAlign: 'center' }}>
@@ -105,7 +110,7 @@ const skills = ({ skills }) => {
 export default skills;
 
 export const getStaticProps = async () => {
-  const skills = await fetchSkills();
+  const skills: Array<SkillType> = await fetchSkills();
   return {
     props: {
       skills,

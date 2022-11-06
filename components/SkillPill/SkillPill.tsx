@@ -1,7 +1,12 @@
 import { Button, Image, Link, Text } from '@nextui-org/react';
 import { urlFor } from 'sanity';
+import { SkillType } from 'utils/types';
 
-const SkillPill = ({ skill }) => {
+type Props = {
+  skill: SkillType;
+};
+
+const SkillPill = ({ skill }: Props) => {
   return (
     <Link href={`/skills/${skill.slug.current}`} css={{ margin: '1rem' }}>
       <Button

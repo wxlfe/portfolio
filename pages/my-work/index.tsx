@@ -2,8 +2,13 @@ import { Button, Card, Col, Grid, Link, Row, Text } from '@nextui-org/react';
 import { Layout, ProjectCard } from 'components';
 import { urlFor } from 'sanity';
 import { fetchProjects } from 'utils';
+import { ProjectType } from 'utils/types';
 
-const myWork = ({ projects }) => {
+type Props = {
+  projects: Array<ProjectType>;
+};
+
+const myWork = ({ projects }: Props) => {
   return (
     <Layout>
       <Text h1 css={{ textAlign: 'center' }}>
@@ -25,7 +30,7 @@ const myWork = ({ projects }) => {
 export default myWork;
 
 export const getStaticProps = async () => {
-  const projects = await fetchProjects();
+  const projects: Array<ProjectType> = await fetchProjects();
   return {
     props: {
       projects,
