@@ -56,7 +56,7 @@ export type ProjectType = {
   images: Array<Image>;
   job: JobType | null;
   link: string;
-  skills: Array<Reference | SkillType | null>;
+  skills: Array<SkillType | null>;
   slug: {
     _type: 'slug';
     current: string;
