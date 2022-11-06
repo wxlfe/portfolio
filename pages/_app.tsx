@@ -1,7 +1,11 @@
 import { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '../lib/apollo';
 import { createTheme, NextUIProvider } from '@nextui-org/react';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const apolloClient = useApollo(pageProps.initialApolloState);
+
   const theme = createTheme({
     type: 'light',
     theme: {
@@ -35,7 +39,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <NextUIProvider theme={theme}>
-      <Component {...pageProps} />
+      <ApolloProvider client={apolloClient}>
+        <Component {...pageProps} />
+      </ApolloProvider>
     </NextUIProvider>
   );
 }
