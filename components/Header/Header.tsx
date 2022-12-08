@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import { Avatar, Grid, Navbar, Link, Text } from '@nextui-org/react';
+import { default as NextLink } from 'next/link';
+import { Avatar, Button, Grid, Link, Navbar, Text } from '@nextui-org/react';
 import { IoLogoGithub, IoLogoLinkedin, IoMail } from 'react-icons/io5';
 
 const Header = () => {
@@ -22,19 +23,22 @@ const Header = () => {
   return (
     <Navbar isBordered variant='floating'>
       <Navbar.Brand css={{ flexGrow: 1, flexBasis: 0 }}>
-        <Link href='/'>
+        <NextLink href='/'>
           <Avatar src='/wxlfe-gold.svg' text='NW' size='xl' />
-        </Link>
+        </NextLink>
       </Navbar.Brand>
       <Navbar.Content enableCursorHighlight hideIn='xs' variant='underline'>
         {navigationItems.map((item, index) => (
-          <Navbar.Link
+          <Navbar.Item
             key={index}
-            href={`/${item.slug}`}
             isActive={router.pathname.includes(item.slug)}
           >
-            <Text b>{item.label}</Text>
-          </Navbar.Link>
+            <Button light color='primary'>
+              <NextLink href={`/${item.slug}`}>
+                <Text b>{item.label}</Text>
+              </NextLink>
+            </Button>
+          </Navbar.Item>
         ))}
       </Navbar.Content>
       <Navbar.Content hideIn='xs' css={{ flexGrow: 1, flexBasis: 0 }}>
@@ -71,19 +75,22 @@ const Header = () => {
         <Navbar.CollapseItem>
           <Grid.Container gap={5} justify='flex-end'>
             <Grid xs={2} justify='center'>
-              <Link href='mailto:nate@wxlfe.dev' css={{ fontSize: '$4xl' }}>
+              <Link href='mailto:nate@wxlfe.dev' style={{ fontSize: '$4xl' }}>
                 <IoMail />
               </Link>
             </Grid>
             <Grid xs={2} justify='center'>
-              <Link href='https://github.com/wxlfe' css={{ fontSize: '$4xl' }}>
+              <Link
+                href='https://github.com/wxlfe'
+                style={{ fontSize: '$4xl' }}
+              >
                 <IoLogoGithub />
               </Link>
             </Grid>
             <Grid xs={2} justify='center'>
               <Link
                 href='https://linkedin.com/in/wxlfe'
-                css={{ fontSize: '$4xl' }}
+                style={{ fontSize: '$4xl' }}
               >
                 <IoLogoLinkedin />
               </Link>

@@ -8,16 +8,16 @@ export default function App({ Component, pageProps }: AppProps) {
     type: 'light',
     theme: {
       colors: {
-        primaryLight: '$green200',
-        primaryLightHover: '$green300',
-        primaryLightActive: '$green400',
-        primaryLightContrast: '$green600',
+        primaryLight: '#d1ad54',
+        primaryLightHover: '#d1ad54',
+        primaryLightActive: '#d1ad54',
+        primaryLightContrast: '#d1ad54',
         primary: '#d1ad54',
-        primaryBorder: '$green500',
-        primaryBorderHover: '$green600',
-        primarySolidHover: '$green700',
+        primaryBorder: '#d1ad54',
+        primaryBorderHover: '#d1ad54',
+        primarySolidHover: '#d1ad54',
         primarySolidContrast: '$white',
-        primaryShadow: '$green500',
+        primaryShadow: '#d1ad54',
 
         gradient:
           'linear-gradient(112deg, $blue100 -25%, $pink500 -10%, $purple500 80%)',
