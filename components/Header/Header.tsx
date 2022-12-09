@@ -27,22 +27,28 @@ const Header = () => {
           <Avatar src='/wxlfe-gold.svg' text='NW' size='xl' />
         </NextLink>
       </Navbar.Brand>
-      <Navbar.Content enableCursorHighlight hideIn='xs' variant='underline'>
-        {navigationItems.map((item, index) => (
-          <Navbar.Item
-            key={index}
-            isActive={router.pathname.includes(item.slug)}
-          >
-            <Button light color='primary'>
-              <NextLink href={`/${item.slug}`}>
-                <Text b>{item.label}</Text>
-              </NextLink>
-            </Button>
-          </Navbar.Item>
-        ))}
+      <Navbar.Content
+        enableCursorHighlight
+        hideIn='xs'
+        variant='highlight-solid-rounded'
+      >
+        <Button.Group>
+          {navigationItems.map((item, index) => (
+            <Navbar.Item
+              key={index}
+              isActive={router.pathname.includes(item.slug)}
+            >
+              <Button light color='primary'>
+                <NextLink href={`/${item.slug}`}>
+                  <Text b>{item.label}</Text>
+                </NextLink>
+              </Button>
+            </Navbar.Item>
+          ))}
+        </Button.Group>
       </Navbar.Content>
       <Navbar.Content hideIn='xs' css={{ flexGrow: 1, flexBasis: 0 }}>
-        <Grid.Container gap={5} justify='flex-end'>
+        <Grid.Container gap={4} justify='flex-end'>
           <Grid xs={2} justify='center'>
             <Link href='mailto:nate@wxlfe.dev' css={{ fontSize: '$4xl' }}>
               <IoMail />
@@ -67,9 +73,9 @@ const Header = () => {
       <Navbar.Collapse>
         {navigationItems.map((item, index) => (
           <Navbar.CollapseItem key={index}>
-            <Link color='inherit' href={`/${item.slug}`}>
+            <NextLink color='inherit' href={`/${item.slug}`}>
               <Text h1>{item.label}</Text>
-            </Link>
+            </NextLink>
           </Navbar.CollapseItem>
         ))}
         <Navbar.CollapseItem>
