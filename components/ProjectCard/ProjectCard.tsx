@@ -1,4 +1,5 @@
-import { Button, Card, Col, Link, Row, Text } from '@nextui-org/react';
+import Link from 'next/link';
+import { Button, Card, Col, Row, Text } from '@nextui-org/react';
 import { urlFor } from 'sanity';
 import { ProjectType } from 'utils/types';
 
@@ -50,13 +51,13 @@ const ProjectCard = ({ project }: Props) => {
                 marginTop: '2%',
               }}
             >
-              <Link href={`/my-work/${project.slug.current}`}>
-                <Button
-                  flat
-                  auto
-                  rounded
-                  css={{ color: 'white', bg: '#d1ad54aa' }}
-                >
+              <Button
+                flat
+                auto
+                rounded
+                css={{ color: 'white', bg: '#d1ad54aa' }}
+              >
+                <Link href={`/my-work/${project.slug.current}`}>
                   <Text
                     css={{ color: 'inherit' }}
                     size={12}
@@ -65,8 +66,8 @@ const ProjectCard = ({ project }: Props) => {
                   >
                     See More
                   </Text>
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </Row>
           </Col>
         </Row>
