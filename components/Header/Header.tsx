@@ -21,7 +21,7 @@ const Header = () => {
   ];
 
   return (
-    <Navbar isBordered variant='floating'>
+    <Navbar isBordered variant='floating' css={{ background: 'none' }}>
       <Navbar.Brand css={{ flexGrow: 1, flexBasis: 0 }}>
         <NextLink href='/'>
           <Avatar src='/wxlfe-gold.svg' text='NW' size='xl' alt='Nate Wolfe' />
