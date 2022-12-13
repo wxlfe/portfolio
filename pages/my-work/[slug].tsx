@@ -1,12 +1,4 @@
-import {
-  Card,
-  Container,
-  Image,
-  Modal,
-  Row,
-  Spacer,
-  Text,
-} from '@nextui-org/react';
+import { Card, Container, Image, Modal, Row, Text } from '@nextui-org/react';
 import { Layout, SkillPill } from 'components';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -63,6 +55,7 @@ export default function Project({ project }: Props) {
             maxWidth: '80rem',
             display: 'flex',
             justifyContent: 'center',
+            padding: '0',
           }}
         >
           <div
@@ -115,14 +108,15 @@ export default function Project({ project }: Props) {
               overflowX: 'auto',
               scrollbarWidth: 'none',
               scrollbarColor: 'transparent',
+              gap: '1rem',
+              paddingLeft: '1rem',
             }}
           >
             {project.skills.map((skill) => {
               return <SkillPill skill={skill} />;
             })}
           </div>
-          <Spacer />
-          <Row justify='center' align='center'>
+          <Row justify='center' align='center' css={{ padding: '1rem' }}>
             <Text>{project.description}</Text>
           </Row>
         </Container>

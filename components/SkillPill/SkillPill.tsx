@@ -25,6 +25,9 @@ const SkillPill = ({ skill }: Props) => {
           }}
         />
       }
+      css={{
+        zIndex: '100',
+      }}
       href={`/skills/${skill.slug.current}`}
     >
       <Link href={`/skills/${skill.slug.current}`}>

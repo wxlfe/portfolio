@@ -7,7 +7,7 @@ import {
   Progress,
   Text,
 } from '@nextui-org/react';
-import { Layout } from 'components';
+import { Layout, SkillPill } from 'components';
 import Head from 'next/head';
 import { urlFor } from 'sanity';
 import { fetchSkills } from 'utils';
@@ -62,7 +62,7 @@ const skills = ({ skills }: Props) => {
               <Text h2 css={{ textAlign: 'center' }}>
                 {category[0]}
               </Text>
-              <Grid.Container gap={1} justify='center'>
+              <Grid.Container gap={2} justify='center'>
                 {category[1].sort(sortByExperience).map((skill, index) => {
                   return (
                     <>
@@ -72,7 +72,8 @@ const skills = ({ skills }: Props) => {
                         alignItems='center'
                         key={`Button ${index}`}
                       >
-                        <Link href={`/skills/${skill.slug.current}`}>
+                        <SkillPill skill={skill} />
+                        {/* <Link href={`/skills/${skill.slug.current}`}>
                           <Button
                             color='primary'
                             auto
@@ -92,7 +93,7 @@ const skills = ({ skills }: Props) => {
                           >
                             <Text b>{skill.title}</Text>
                           </Button>
-                        </Link>
+                        </Link> */}
                       </Grid>
                       <Grid
                         xs={5}

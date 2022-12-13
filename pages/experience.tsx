@@ -55,6 +55,7 @@ const experience = ({ experience }: Props) => {
                       display: 'flex',
                       justifyContent: 'center',
                       marginTop: '1rem',
+                      padding: '0',
                     }}
                   >
                     <Row justify='center'>
@@ -66,16 +67,13 @@ const experience = ({ experience }: Props) => {
                         overflowX: 'auto',
                         scrollbarWidth: 'none',
                         scrollbarColor: 'transparent',
+                        gap: '1rem',
+                        paddingLeft: '1rem',
                       }}
                     >
                       {job.skills?.map((skill, index) => {
                         return (
-                          <div
-                            style={{
-                              margin: '1rem',
-                            }}
-                            key={index}
-                          >
+                          <div key={index}>
                             <SkillPill skill={skill} />
                           </div>
                         );
@@ -91,6 +89,7 @@ const experience = ({ experience }: Props) => {
                       display: 'flex',
                       justifyContent: 'center',
                       marginTop: '1rem',
+                      padding: '0',
                     }}
                   >
                     <Row justify='center'>

@@ -20,7 +20,7 @@ export default function Skill({ skill }: Props) {
         <Row
           justify='center'
           css={{
-            margin: '1rem',
+            marginTop: '1rem',
           }}
         >
           <Card css={{ maxWidth: '80rem' }}>
@@ -37,19 +37,22 @@ export default function Skill({ skill }: Props) {
                 <Text h1>{skill.title}</Text>
               </Row>
             </Card.Header>
-            <Card.Body>
+            <Card.Body css={{ padding: '0' }}>
               <Container
                 css={{
                   display: 'flex',
                   justifyContent: 'center',
+                  padding: '0',
                 }}
               >
-                <Row justify='center' align='center'>
+                <Row justify='center' align='center' css={{ padding: '1rem' }}>
                   <Text>{skill.description}</Text>
                 </Row>
                 {!!skill.projects[0] && (
                   <>
-                    <Text h2>Projects Using {skill.title}</Text>
+                    <Text h2 css={{ padding: '1rem' }}>
+                      Projects Using {skill.title}
+                    </Text>
                     <div
                       style={{
                         display: 'flex',
