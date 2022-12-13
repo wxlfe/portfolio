@@ -1,5 +1,6 @@
 import { Button, Card, Col, Grid, Link, Row, Text } from '@nextui-org/react';
 import { Layout, ProjectCard } from 'components';
+import Head from 'next/head';
 import { urlFor } from 'sanity';
 import { fetchProjects } from 'utils';
 import { ProjectType } from 'utils/types';
@@ -10,20 +11,25 @@ type Props = {
 
 const myWork = ({ projects }: Props) => {
   return (
-    <Layout>
-      <Text h1 css={{ textAlign: 'center' }}>
-        My Work
-      </Text>
-      <Grid.Container gap={2} justify='center'>
-        {projects.map((project) => {
-          return (
-            <Grid xs={12} sm={6} xl={4}>
-              <ProjectCard project={project} />
-            </Grid>
-          );
-        })}
-      </Grid.Container>
-    </Layout>
+    <>
+      <Head>
+        <title>Nate Wolfe | My Work</title>
+      </Head>
+      <Layout>
+        <Text h1 css={{ textAlign: 'center' }}>
+          My Work
+        </Text>
+        <Grid.Container gap={2} justify='center'>
+          {projects.map((project) => {
+            return (
+              <Grid xs={12} sm={6} xl={4}>
+                <ProjectCard project={project} />
+              </Grid>
+            );
+          })}
+        </Grid.Container>
+      </Layout>
+    </>
   );
 };
 
