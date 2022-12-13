@@ -24,7 +24,7 @@ const Header = () => {
     <Navbar isBordered variant='floating'>
       <Navbar.Brand css={{ flexGrow: 1, flexBasis: 0 }}>
         <NextLink href='/'>
-          <Avatar src='/wxlfe-gold.svg' text='NW' size='xl' />
+          <Avatar src='/wxlfe-gold.svg' text='NW' size='xl' alt='Nate Wolfe' />
         </NextLink>
       </Navbar.Brand>
       <Navbar.Content
@@ -51,12 +51,12 @@ const Header = () => {
         <Grid.Container gap={4} justify='flex-end'>
           <Grid xs={2} justify='center'>
             <Link href='mailto:nate@wxlfe.dev' css={{ fontSize: '$4xl' }}>
-              <IoMail />
+              <IoMail aria-label='Email' />
             </Link>
           </Grid>
           <Grid xs={2} justify='center'>
             <Link href='https://github.com/wxlfe' css={{ fontSize: '$4xl' }}>
-              <IoLogoGithub />
+              <IoLogoGithub aria-label='GitHub' />
             </Link>
           </Grid>
           <Grid xs={2} justify='center'>
@@ -64,7 +64,7 @@ const Header = () => {
               href='https://linkedin.com/in/wxlfe'
               css={{ fontSize: '$4xl' }}
             >
-              <IoLogoLinkedin />
+              <IoLogoLinkedin aria-label='Linkedin' />
             </Link>
           </Grid>
         </Grid.Container>
@@ -82,7 +82,7 @@ const Header = () => {
           <Grid.Container gap={5} justify='flex-end'>
             <Grid xs={2} justify='center'>
               <Link href='mailto:nate@wxlfe.dev' style={{ fontSize: '$4xl' }}>
-                <IoMail />
+                <IoMail aria-label='Email' />
               </Link>
             </Grid>
             <Grid xs={2} justify='center'>
@@ -90,7 +90,7 @@ const Header = () => {
                 href='https://github.com/wxlfe'
                 style={{ fontSize: '$4xl' }}
               >
-                <IoLogoGithub />
+                <IoLogoGithub aria-label='GitHub' />
               </Link>
             </Grid>
             <Grid xs={2} justify='center'>
@@ -98,7 +98,7 @@ const Header = () => {
                 href='https://linkedin.com/in/wxlfe'
                 style={{ fontSize: '$4xl' }}
               >
-                <IoLogoLinkedin />
+                <IoLogoLinkedin aria-label='Linkedin' />
               </Link>
             </Grid>
           </Grid.Container>

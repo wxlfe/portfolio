@@ -14,6 +14,7 @@ const myWork = ({ projects }: Props) => {
     <>
       <Head>
         <title>Nate Wolfe | My Work</title>
+        <meta name='description' content='My Work' />
       </Head>
       <Layout>
         <Text h1 css={{ textAlign: 'center' }}>

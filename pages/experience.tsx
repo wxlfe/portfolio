@@ -24,6 +24,7 @@ const experience = ({ experience }: Props) => {
     <>
       <Head>
         <title>Nate Wolfe | Experience</title>
+        <meta name='description' content='Experience' />
       </Head>
       <Layout>
         <Collapse.Group

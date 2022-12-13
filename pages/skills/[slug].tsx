@@ -14,6 +14,7 @@ export default function Skill({ skill }: Props) {
     <>
       <Head>
         <title>Nate Wolfe | Skills | {skill?.title}</title>
+        <meta name='description' content={`Skills - ${skill?.title}`} />
       </Head>
       <Layout>
         <Row

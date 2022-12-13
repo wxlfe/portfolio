@@ -43,6 +43,7 @@ export default function Project({ project }: Props) {
     <>
       <Head>
         <title>Nate Wolfe | My Work | {project?.title}</title>
+        <meta name='description' content={`My work - ${project?.title}`} />
       </Head>
       <Layout>
         <Text h1 css={{ textAlign: 'center', marginTop: '1rem' }}>

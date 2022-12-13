@@ -42,6 +42,7 @@ const skills = ({ skills }: Props) => {
     <>
       <Head>
         <title>Nate Wolfe | Skills</title>
+        <meta name='description' content='Skills' />
       </Head>
       <Layout>
         <Text h1 css={{ textAlign: 'center' }}>
