@@ -1,4 +1,12 @@
-import { Card, Container, Image, Modal, Row, Text } from '@nextui-org/react';
+import {
+  Card,
+  Container,
+  Image,
+  Link,
+  Modal,
+  Row,
+  Text,
+} from '@nextui-org/react';
 import { Layout, SkillPill } from 'components';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -49,6 +57,13 @@ export default function Project({ project }: Props) {
           <Text h2 css={{ textAlign: 'center', marginTop: '1rem' }}>
             {project.year}
           </Text>
+        )}
+        {!!project.link && (
+          <Row justify='center' css={{ padding: '1rem' }}>
+            <Link href={project.link} isExternal>
+              Check it out here
+            </Link>
+          </Row>
         )}
         <Container
           css={{
