@@ -9,20 +9,20 @@
     "server": "yarn build && NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
+    "@apollo/client": "3.5.10",
     "@graphql-tools/load-files": "6.0.18",
     "@graphql-tools/merge": "6.0.18",
     "@graphql-tools/schema": "6.0.18",
-    "@graphql-yoga/node": "^2.2.1",
-    "@nextui-org/react": "^1.0.0-beta.10",
+    "@graphql-yoga/node": "2.2.1",
+    "@nextui-org/react": "1.0.0-beta.10",
     "@sanity/image-url": "^1.0.1",
     "graphql": "15.6.0",
-    "graphql-tag": "^2.12.6",
-    "next": "^12.1.5",
-    "next-sanity": "^1.0.8",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.4.0"
+    "graphql-tag": "2.12.6",
+    "next": "12.1.5",
+    "next-sanity": "1.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "4.4.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
