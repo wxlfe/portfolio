@@ -32,20 +32,18 @@ const Header = () => {
         hideIn='xs'
         variant='highlight-solid-rounded'
       >
-        <Button.Group>
-          {navigationItems.map((item, index) => (
-            <Navbar.Item
-              key={index}
-              isActive={router.pathname.includes(item.slug)}
-            >
-              <Button light color='primary'>
-                <NextLink href={`/${item.slug}`}>
-                  <Text b>{item.label}</Text>
-                </NextLink>
-              </Button>
-            </Navbar.Item>
-          ))}
-        </Button.Group>
+        {navigationItems.map((item, index) => (
+          <Navbar.Item
+            key={index}
+            isActive={router.pathname.includes(item.slug)}
+          >
+            <Button light color='primary'>
+              <NextLink href={`/${item.slug}`}>
+                <Text b>{item.label}</Text>
+              </NextLink>
+            </Button>
+          </Navbar.Item>
+        ))}
       </Navbar.Content>
       <Navbar.Content hideIn='xs' css={{ flexGrow: 1, flexBasis: 0 }}>
         <Grid.Container gap={4} justify='flex-end'>
