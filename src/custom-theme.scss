@@ -9,11 +9,45 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+// My Palettes
+$wxlfe-primary: (
+  50 : #f9f5ea,
+  100 : #f1e6cc,
+  200 : #e8d6aa,
+  300 : #dfc687,
+  400 : #d8b96e,
+  500 : #d1ad54,
+  600 : #cca64d,
+  700 : #c69c43,
+  800 : #c0933a,
+  900 : #b58329,
+  A100 : #fffbf5,
+  A200 : #ffe8c2,
+  A400 : #ffd58f,
+  A700 : #ffcb75,
+  contrast: (
+      50 : #282828,
+      100 : #282828,
+      200 : #282828,
+      300 : #282828,
+      400 : #282828,
+      500 : #282828,
+      600 : #282828,
+      700 : #282828,
+      800 : #282828,
+      900 : #282828,
+      A100 : #282828,
+      A200 : #282828,
+      A400 : #282828,
+      A700 : #282828,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$portfolio-primary: mat.define-palette(mat.$indigo-palette);
-$portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$portfolio-primary: mat.define-palette($wxlfe-primary);
+$portfolio-accent: mat.define-palette($wxlfe-primary, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $portfolio-warn: mat.define-palette(mat.$red-palette);
