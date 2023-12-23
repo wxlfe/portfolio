@@ -4,6 +4,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { SanityService } from './sanity.service';
 
 @Component({
   selector: 'app-root',
@@ -23,8 +24,9 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   navLinks: any[];
   activeLinkIndex = -1;
+  public data: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private sanityService: SanityService) {
     this.navLinks = [
       {
         label: 'Projects',
