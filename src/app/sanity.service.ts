@@ -4,7 +4,7 @@ import { createClient, ClientConfig, SanityClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
