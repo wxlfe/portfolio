@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
-  "short_name": "portfolio",
-  "theme_color": "#1976d2",
+  "name": "Nate Wolfe",
+  "short_name": "Nate Wolfe",
+  "theme_color": "#d1ad54",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
