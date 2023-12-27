@@ -1,0 +1,59 @@
+<h1 class="page_header">Experience</h1>
+<mat-stepper
+  orientation="vertical"
+  [linear]="false"
+  #stepper
+  [selectedIndex]="data.length - 1"
+>
+  <ng-template matStepperIcon="number"></ng-template>
+  <ng-template matStepperIcon="edit"></ng-template>
+  <ng-template matStepperIcon="done"></ng-template>
+  <ng-template matStepperIcon="error"></ng-template>
+  <mat-step *ngFor="let job of data" [completed]="false">
+    <ng-template matStepLabel>
+      <h2 class="job_title">{{ job.title }}</h2>
+      {{ job.company + ", " + job.startDate + " — " + job.endDate }}
+    </ng-template>
+    <mat-chip-listbox aria-label="Skill list">
+      <mat-chip
+        *ngFor="let skill of job.skills"
+        [routerLink]="['/skills', skill.slug.current]"
+      >
+        <img
+          matChipAvatar
+          [src]="skill.skillIcon | sanityImage : 50"
+          alt="{{ skill.title }} Icon"
+        />
+        {{ skill.title }}
+      </mat-chip>
+    </mat-chip-listbox>
+    <div
+      *ngIf="job.description"
+      class="job_description"
+      [innerHTML]="job.description | portableText"
+    ></div>
+    <div class="card_grid">
+      <mat-card *ngFor="let project of job.projects">
+        <mat-card-header>
+          <mat-card-title>{{ project.title }}</mat-card-title>
+          <mat-card-subtitle>{{ project.year }}</mat-card-subtitle>
+        </mat-card-header>
+        <img
+          *ngIf="project.images?.length > 0"
+          mat-card-image
+          class="project_image"
+          [src]="project.images[0] | sanityImage : 1920"
+        />
+        <mat-card-actions align="end">
+          <button
+            mat-flat-button
+            color="primary"
+            [routerLink]="['/projects', project.slug.current]"
+          >
+            SEE MORE
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-step>
+</mat-stepper>

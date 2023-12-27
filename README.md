@@ -1,11 +1,27 @@
-# Portfolio - Nate Wolfe
+# Portfolio
 
-This is my portfolio site, live at [wxlfe.dev](https://wxlfe.dev). If you're here, you're probably more interested in the portfolio itself and its architecture, so I'll lay that out here.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
-## Frontend Architecture
+## Development server
 
-The frontend is built using Next.js with TypeScript. I also used a component library called [NextUI](https://nextui.org), which is built on Styled Components.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## CMS
+## Code scaffolding
 
-I used Sanity as the CMS for this site, using GROQ as the query language.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

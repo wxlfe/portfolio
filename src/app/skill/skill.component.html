@@ -1,0 +1,40 @@
+<div class="skill_header">
+  <img [src]="data.skillIcon | sanityImage : 100" />
+  <h1>{{ data.title }}</h1>
+</div>
+<div *ngIf="!!data.images" class="skill_images">
+  <img
+    *ngFor="let image of data.images"
+    [src]="image | sanityImage : 1920"
+    width="720rem"
+  />
+</div>
+<div class="skill_description">
+  {{ data.description }}
+</div>
+<div class="skill_projects">
+  <h2>Projects Using {{ data.title }}</h2>
+  <div class="card_grid">
+    <mat-card *ngFor="let project of data.projects">
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+        <mat-card-subtitle>{{ project.year }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        *ngIf="project.images?.length > 0"
+        mat-card-image
+        class="project_image"
+        [src]="project.images[0] | sanityImage : 1920"
+      />
+      <mat-card-actions align="end">
+        <button
+          mat-flat-button
+          color="primary"
+          [routerLink]="['/projects', project.slug.current]"
+        >
+          SEE MORE
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

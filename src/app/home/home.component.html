@@ -1,0 +1,27 @@
+<div class="home_container">
+  <div class="left_container">
+    <img
+      *ngIf="data.mainImage"
+      class="main_image"
+      [src]="data.mainImage | sanityImage : 500"
+      width="100%"
+    />
+  </div>
+  <div class="right_container">
+    <div class="right_inner_container">
+      <h1>{{ data.title }}</h1>
+      <h2>{{ data.subtitle }}</h2>
+      <div class="link_icons">
+        <button mat-icon-button class="icon_buttons">
+          <ng-icon name="ionMail"></ng-icon>
+        </button>
+        <button mat-icon-button class="icon_buttons">
+          <ng-icon name="ionLogoGithub"></ng-icon>
+        </button>
+        <button mat-icon-button class="icon_buttons">
+          <ng-icon name="ionLogoLinkedin"></ng-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
