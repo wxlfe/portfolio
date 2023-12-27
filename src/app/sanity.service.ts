@@ -47,6 +47,17 @@ export class SanityService {
     return await this.sanityClient().fetch(`*[_type == "skill"]`);
   }
 
+  async getSkill(slug: string): Promise<any> {
+    return await this.sanityClient()
+      .fetch(` *[_type == "skill" && slug.current == "${slug}"]{
+      ...,
+      "projects": *[_type=='project' && references(^._id)]{
+        ...,
+        job->
+      }
+    }`);
+  }
+
   async getExperience(): Promise<any> {
     return await this.sanityClient().fetch(`*[_type == "job"]{
       ...,

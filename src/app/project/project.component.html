@@ -6,7 +6,9 @@
     </button>
   </a>
 </div>
-<h2 class="project_year">{{ data.year }}</h2>
+<h2 class="project_year">
+  {{ !!data.job?.title ? data.year + " at " + data.job.company : data.year }}
+</h2>
 <div *ngIf="!!data.images" class="project_images">
   <img
     *ngFor="let image of data.images"
