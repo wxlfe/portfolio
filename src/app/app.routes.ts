@@ -5,6 +5,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './project/project.component';
 import { SkillComponent } from './skill/skill.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'experience', component: ExperienceComponent, pathMatch: 'full' },
   {
     path: '**',
-    redirectTo: '404',
+    pathMatch: 'full',
+    component: PageNotFoundComponent,
   },
 ];
