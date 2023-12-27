@@ -12,27 +12,21 @@
       <h1>{{ data.title }}</h1>
       <h2>{{ data.subtitle }}</h2>
       <div class="link_icons">
-        <button
-          mat-icon-button
-          class="icon_buttons"
-          href="mailto://nate@wxlfe.dev"
-        >
-          <ng-icon name="ionMail"></ng-icon>
-        </button>
-        <button
-          mat-icon-button
-          class="icon_buttons"
-          href="https://github.com/wxlfe"
-        >
-          <ng-icon name="ionLogoGithub"></ng-icon>
-        </button>
-        <button
-          mat-icon-button
-          class="icon_buttons"
-          href="https://linkedin.com/in/wxlfe"
-        >
-          <ng-icon name="ionLogoLinkedin"></ng-icon>
-        </button>
+        <a href="mailto://nate@wxlfe.dev">
+          <button mat-icon-button class="icon_buttons">
+            <ng-icon name="ionMail"></ng-icon>
+          </button>
+        </a>
+        <a href="https://github.com/wxlfe">
+          <button mat-icon-button class="icon_buttons">
+            <ng-icon name="ionLogoGithub"></ng-icon>
+          </button>
+        </a>
+        <a href="https://linkedin.com/in/wxlfe">
+          <button mat-icon-button class="icon_buttons">
+            <ng-icon name="ionLogoLinkedin"></ng-icon>
+          </button>
+        </a>
       </div>
     </div>
   </div>
