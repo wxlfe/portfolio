@@ -3,10 +3,25 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectComponent } from './project/project.component';
 
 export const routes: Routes = [
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'experience', component: ExperienceComponent },
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'projects', component: ProjectsComponent, pathMatch: 'full' },
+  {
+    path: 'projects/:slug',
+    component: ProjectComponent,
+    pathMatch: 'full',
+  },
+  { path: 'skills', component: SkillsComponent, pathMatch: 'full' },
+  // {
+  //   path: 'skills/:slug',
+  //   component: SkillComponent,
+  //   pathMatch: 'full',
+  // },
+  { path: 'experience', component: ExperienceComponent, pathMatch: 'full' },
+  {
+    path: '**',
+    redirectTo: '404',
+  },
 ];

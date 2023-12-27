@@ -1,16 +1,27 @@
-<div
-  style="
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 40px;
-  "
->
-  <div style="display: flex; flex-direction: column; justify-content: center">
-    <img width="500px" src="../../assets/images/wxlfe-gold.svg" />
+<div class="home_container">
+  <div class="left_container">
+    <img
+      *ngIf="data.mainImage"
+      class="main_image"
+      [src]="data.mainImage | sanityImage : 500"
+      width="100%"
+    />
   </div>
-  <div style="display: flex; flex-direction: column; justify-content: center">
-    <h1>{{ data.title }}</h1>
-    <h2>{{ data.subtitle }}</h2>
+  <div class="right_container">
+    <div class="right_inner_container">
+      <h1>{{ data.title }}</h1>
+      <h2>{{ data.subtitle }}</h2>
+      <div class="link_icons">
+        <button mat-icon-button>
+          <ng-icon name="ionMail"></ng-icon>
+        </button>
+        <button mat-icon-button>
+          <ng-icon name="ionLogoGithub"></ng-icon>
+        </button>
+        <button mat-icon-button>
+          <ng-icon name="ionLogoLinkedin"></ng-icon>
+        </button>
+      </div>
+    </div>
   </div>
 </div>

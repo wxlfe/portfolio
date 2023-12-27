@@ -1,1 +1,36 @@
-<p>projects works!</p>
+<h1 class="page_header">Projects</h1>
+<div class="filter_row">
+  <mat-form-field>
+    <mat-label>Sort By</mat-label>
+    <mat-select
+      [(ngModel)]="sortBy"
+      name="sort"
+      (selectionChange)="sortByChanged()"
+    >
+      @for (sortOption of sortOptions; track sortOption) {
+      <mat-option [value]="sortOption">{{ sortOption }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="card_grid">
+  <mat-card *ngFor="let project of data">
+    <mat-card-header>
+      <mat-card-title>{{ project.title }}</mat-card-title>
+      <mat-card-subtitle>{{
+        project.job ? project.year + " at " + project.job.company : project.year
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      *ngIf="project.images?.length > 0"
+      mat-card-image
+      class="project_image"
+      [src]="project.images[0] | sanityImage : 1920"
+    />
+    <mat-card-actions align="end">
+      <button mat-button [routerLink]="['/projects', project.slug.current]">
+        SEE MORE
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

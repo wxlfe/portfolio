@@ -7,7 +7,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SanityService } from './sanity.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'portfolio-root',
   standalone: true,
   imports: [
     CommonModule,

@@ -1,0 +1,34 @@
+<div class="project_header">
+  <h1 class="page_header">{{ data.title }}</h1>
+  <a [href]="data.link" *ngIf="!!data.link">
+    <button mat-icon-button>
+      <ng-icon name="ionOpen"></ng-icon>
+    </button>
+  </a>
+</div>
+<h2 class="project_year">{{ data.year }}</h2>
+<div *ngIf="!!data.images" class="project_images">
+  <img
+    *ngFor="let image of data.images"
+    [src]="image | sanityImage : 1920"
+    width="720rem"
+  />
+</div>
+<div class="project_skills">
+  <mat-chip-listbox aria-label="Skill list">
+    <mat-chip
+      *ngFor="let skill of data.skills"
+      [routerLink]="['/skills', skill.slug.current]"
+    >
+      <img
+        matChipAvatar
+        [src]="skill.skillIcon | sanityImage : 50"
+        alt="{{ skill.title }} Icon"
+      />
+      {{ skill.title }}
+    </mat-chip>
+  </mat-chip-listbox>
+</div>
+<div class="project_description">
+  {{ data.description }}
+</div>
