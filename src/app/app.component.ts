@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SanityService } from './sanity.service';
+
+declare const gtag: Function;
 
 @Component({
   selector: 'portfolio-root',
@@ -47,10 +54,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((res) => {
+    this.router.events.subscribe((event) => {
       this.activeLinkIndex = this.navLinks.indexOf(
         this.navLinks.find((tab) => tab.link === '.' + this.router.url)
       );
+      if (event instanceof NavigationEnd) {
+        gtag('config', 'MEASUREMENT-ID', {
+          page_path: event.urlAfterRedirects,
+        });
+      }
     });
   }
 }
