@@ -18,6 +18,8 @@ type HeroData = {
 
 type HomeHeroProps = {
   imageUrl?: string;
+  title?: string;
+  subtitle?: string;
 };
 
 function titleCase(value: string): string {
@@ -177,7 +179,7 @@ async function resolveLocationFromClient(params: URLSearchParams): Promise<strin
   return detectTimezoneLocation();
 }
 
-export function HomeHero({ imageUrl }: HomeHeroProps) {
+export function HomeHero({ imageUrl, title, subtitle }: HomeHeroProps) {
   const [data, setData] = useState<HeroData>({});
   const prefersReducedMotion = useReducedMotion();
 
@@ -426,8 +428,8 @@ export function HomeHero({ imageUrl }: HomeHeroProps) {
           ) : null}
           <div className="hero_intro_text">
             <motion.p className="hero_lead hero_line" initial={itemInitial} animate={itemAnimate} transition={sectionTransition(0)}>
-              <span className="hero_lead_primary">Hi, I&apos;m Nate.</span>
-              <span className="hero_lead_secondary">I&apos;m a Web and Analytics Developer.</span>
+              <span className="hero_lead_primary">{title}</span>
+              <span className="hero_lead_secondary">{subtitle}</span>
             </motion.p>
             <motion.div
               className="hero_contact_links"
