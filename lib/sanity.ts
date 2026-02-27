@@ -4,8 +4,17 @@ import { toHTML, type PortableTextComponents } from '@portabletext/to-html';
 import type { PortableTextBlock } from '@portabletext/types';
 import type { Homepage, Job, Project, SanityImage, Skill } from './types';
 
+/**
+ * Sanity project identifier used by the client.
+ */
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '83vjz0lc';
+/**
+ * Sanity dataset name used by the client.
+ */
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
+/**
+ * Sanity API version pinned for query stability.
+ */
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? '2021-10-21';
 
 const client = createClient({
@@ -15,6 +24,9 @@ const client = createClient({
   useCdn: true,
 });
 
+/**
+ * URL builder for generating transformed Sanity asset URLs.
+ */
 const builder = imageUrlBuilder(client);
 
 /**
@@ -97,6 +109,9 @@ export async function getExperience(): Promise<Job[]> {
   }`);
 }
 
+/**
+ * Portable Text render mapping used by HTML serialization.
+ */
 const portableTextComponents: PortableTextComponents = {
   types: {
     image: ({ value }) => {

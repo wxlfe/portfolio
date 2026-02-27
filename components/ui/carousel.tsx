@@ -6,6 +6,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+/**
+ * Shared carousel control state exposed through context.
+ */
 type CarouselContextValue = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0];
   api: ReturnType<typeof useEmblaCarousel>[1];
@@ -15,6 +18,9 @@ type CarouselContextValue = {
   canScrollNext: boolean;
 };
 
+/**
+ * Context that wires child carousel parts to the parent Embla instance.
+ */
 const CarouselContext = React.createContext<CarouselContextValue | null>(null);
 
 /**
@@ -28,6 +34,9 @@ function useCarousel() {
   return context;
 }
 
+/**
+ * Props for the carousel root component.
+ */
 type CarouselProps = {
   opts?: Parameters<typeof useEmblaCarousel>[0];
   plugins?: Parameters<typeof useEmblaCarousel>[1];

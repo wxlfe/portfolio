@@ -3,11 +3,17 @@
 import { type ComponentProps, useEffect, useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
+/**
+ * Input properties for the project image carousel.
+ */
 type Props = {
   images: string[];
   title: string;
 };
 
+/**
+ * Embla API handle shape returned via `setApi`.
+ */
 type CarouselApi = Parameters<NonNullable<ComponentProps<typeof Carousel>['setApi']>>[0];
 
 /**

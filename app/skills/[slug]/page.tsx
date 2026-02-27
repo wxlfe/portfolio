@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getSkill, sanityImageUrl } from '@/lib/sanity';
 
+/**
+ * Props for the dynamic skill detail route.
+ */
 type Props = {
   params: Promise<{ slug: string }>;
 };

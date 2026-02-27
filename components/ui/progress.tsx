@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils';
 
+/**
+ * Props for the horizontal progress indicator.
+ */
 type ProgressProps = {
   value: number;
   className?: string;

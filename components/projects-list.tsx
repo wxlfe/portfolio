@@ -7,6 +7,9 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/comp
 import { sanityImageUrl } from '@/lib/sanity';
 import type { Project } from '@/lib/types';
 
+/**
+ * Input properties for the sortable projects list.
+ */
 type Props = {
   projects: Project[];
 };

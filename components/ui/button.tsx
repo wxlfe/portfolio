@@ -3,6 +3,9 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
+/**
+ * Style/size variant contract for the reusable button primitive.
+ */
 const buttonVariants = cva('ui-button', {
   variants: {
     variant: {
@@ -24,6 +27,9 @@ const buttonVariants = cva('ui-button', {
   },
 });
 
+/**
+ * Props accepted by the button primitive and variant system.
+ */
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {

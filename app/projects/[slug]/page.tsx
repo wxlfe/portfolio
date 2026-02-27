@@ -6,6 +6,9 @@ import { Card } from '@/components/ui/card';
 import { ProjectImageCarousel } from '@/components/project-image-carousel';
 import { getProject, sanityImageUrl } from '@/lib/sanity';
 
+/**
+ * Props for the dynamic project detail route.
+ */
 type Props = {
   params: Promise<{ slug: string }>;
 };

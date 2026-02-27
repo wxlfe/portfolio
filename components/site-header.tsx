@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
+/**
+ * Primary navigation items shown in the site header.
+ */
 const navLinks = [
   { label: 'Projects', href: '/projects' },
   { label: 'Skills', href: '/skills' },
@@ -19,6 +22,7 @@ const navLinks = [
  */
 export function SiteHeader() {
   const pathname = usePathname();
+  const safePathname = pathname ?? '';
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -40,7 +44,7 @@ export function SiteHeader() {
         </Button>
         <nav className={cn('hover_nav_links', isOpen && 'is-open')} aria-label="Main">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            const isActive = safePathname === link.href || safePathname.startsWith(`${link.href}/`);
             return (
               <Button key={link.href} asChild variant="ghost" size="sm" className={cn('hover_nav_button', isActive && 'is-active')}>
                 <Link href={link.href} onClick={() => setIsOpen(false)}>

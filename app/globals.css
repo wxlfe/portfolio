@@ -116,7 +116,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 0.2rem 0.4rem;
+  padding: 0;
 }
 
 .hover_nav_links {
@@ -351,7 +351,6 @@ main {
   overflow: hidden;
   background: transparent;
   box-shadow: none;
-  animation: fade-in 0.4s ease-out;
   isolation: isolate;
   justify-items: center;
 }
@@ -404,7 +403,7 @@ main {
 
 .hero_image {
   width: min(17rem, 100%);
-  aspect-ratio: 1 / 1;
+  height: min(17rem, 100%);
   object-fit: cover;
   border-radius: 999px;
   border: 2px solid color-mix(in srgb, var(--primary-500) 65%, transparent);
@@ -670,6 +669,7 @@ main {
 
   .hero_image {
     width: min(14rem, 100%);
+    height: min(14rem, 100%);
   }
 
   .hero_image_glow {
