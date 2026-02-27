@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getExperience, portableTextToHtml, sanityImageUrl } from '@/lib/sanity';
 
+/**
+ * Experience timeline route with job details and linked projects.
+ */
 export default async function ExperiencePage() {
   const data = await getExperience();
 

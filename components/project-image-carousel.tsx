@@ -10,6 +10,9 @@ type Props = {
 
 type CarouselApi = Parameters<NonNullable<ComponentProps<typeof Carousel>['setApi']>>[0];
 
+/**
+ * Displays project images in an interactive carousel with autoplay and fullscreen controls.
+ */
 export function ProjectImageCarousel({ images, title }: Props) {
   const [api, setApi] = useState<CarouselApi | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -46,6 +49,9 @@ export function ProjectImageCarousel({ images, title }: Props) {
     };
   }, [api, snapCount, isPaused]);
 
+  /**
+   * Requests fullscreen mode for an image, including Safari's prefixed API.
+   */
   const openImageFullscreen = (img: HTMLImageElement) => {
     const withWebkitFullscreen = img as HTMLImageElement & {
       webkitRequestFullscreen?: () => Promise<void> | void;

@@ -1,6 +1,9 @@
 import { getProjects } from '@/lib/sanity';
 import { ProjectsList } from '@/components/projects-list';
 
+/**
+ * Projects listing route.
+ */
 export default async function ProjectsPage() {
   const projects = await getProjects();
 

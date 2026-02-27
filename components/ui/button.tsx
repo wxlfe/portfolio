@@ -30,6 +30,9 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
+/**
+ * Base button primitive that supports style variants and `asChild` slot rendering.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';

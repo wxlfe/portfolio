@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Shared Next.js root layout with global navigation, background, and analytics scripts.
+ */
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">

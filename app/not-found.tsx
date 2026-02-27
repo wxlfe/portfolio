@@ -1,3 +1,6 @@
+/**
+ * Fallback 404 route for unmatched Next.js pages.
+ */
 export default function NotFound() {
   return (
     <div className="outer_container">

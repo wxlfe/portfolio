@@ -17,6 +17,9 @@ const client = createClient({
 
 const builder = imageUrlBuilder(client);
 
+/**
+ * Builds a Sanity image URL with optional width and auto-formatting.
+ */
 export function sanityImageUrl(source: SanityImage | undefined, width?: number): string {
   if (!source) {
     return '';
@@ -26,11 +29,17 @@ export function sanityImageUrl(source: SanityImage | undefined, width?: number):
   return width ? imageBuilder.width(width).url() : imageBuilder.url();
 }
 
+/**
+ * Fetches the single homepage document.
+ */
 export async function getHomepage(): Promise<Homepage | null> {
   const data = await client.fetch<Homepage[]>('*[_type == "homepage"]');
   return data[0] ?? null;
 }
 
+/**
+ * Fetches all projects and expands their related job reference.
+ */
 export async function getProjects(): Promise<Project[]> {
   return client.fetch<Project[]>(`*[_type == "project"]{
     ...,
@@ -38,6 +47,9 @@ export async function getProjects(): Promise<Project[]> {
   }`);
 }
 
+/**
+ * Fetches a single project by slug with linked skills and job data.
+ */
 export async function getProject(slug: string): Promise<Project | null> {
   const data = await client.fetch<Project[]>(
     `*[_type == "project" && slug.current == $slug]{
@@ -50,10 +62,16 @@ export async function getProject(slug: string): Promise<Project | null> {
   return data[0] ?? null;
 }
 
+/**
+ * Fetches all skill documents.
+ */
 export async function getSkills(): Promise<Skill[]> {
   return client.fetch<Skill[]>('*[_type == "skill"]');
 }
 
+/**
+ * Fetches a single skill by slug and all projects that reference it.
+ */
 export async function getSkill(slug: string): Promise<Skill | null> {
   const data = await client.fetch<Skill[]>(
     `*[_type == "skill" && slug.current == $slug]{
@@ -68,6 +86,9 @@ export async function getSkill(slug: string): Promise<Skill | null> {
   return data[0] ?? null;
 }
 
+/**
+ * Fetches all job experience documents with populated skills and projects.
+ */
 export async function getExperience(): Promise<Job[]> {
   return client.fetch<Job[]>(`*[_type == "job"]{
     ...,
@@ -85,6 +106,9 @@ const portableTextComponents: PortableTextComponents = {
   },
 };
 
+/**
+ * Renders Portable Text blocks into sanitized HTML fragments.
+ */
 export function portableTextToHtml(value: PortableTextBlock[] | undefined): string {
   if (!value) {
     return '';

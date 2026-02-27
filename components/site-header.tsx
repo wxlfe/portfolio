@@ -14,6 +14,9 @@ const navLinks = [
   { label: 'Experience', href: '/experience' },
 ];
 
+/**
+ * Renders the main site navigation with responsive mobile menu behavior.
+ */
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);

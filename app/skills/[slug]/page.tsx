@@ -8,6 +8,9 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+/**
+ * Dynamic skill detail route with related projects.
+ */
 export default async function SkillPage({ params }: Props) {
   const { slug } = await params;
   const data = await getSkill(slug);

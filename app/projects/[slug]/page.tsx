@@ -10,6 +10,9 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+/**
+ * Dynamic project detail route.
+ */
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const data = await getProject(slug);

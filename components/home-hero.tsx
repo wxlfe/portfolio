@@ -22,6 +22,9 @@ type HomeHeroProps = {
   subtitle?: string;
 };
 
+/**
+ * Normalizes a tokenized string into human-readable title case.
+ */
 function titleCase(value: string): string {
   return value
     .replace(/[-_]+/g, ' ')
@@ -29,6 +32,9 @@ function titleCase(value: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+/**
+ * Detects browser name and prefixes it with `mobile` when applicable.
+ */
 function detectBrowser(): string | undefined {
   if (typeof navigator === 'undefined') {
     return undefined;
@@ -55,6 +61,9 @@ function detectBrowser(): string | undefined {
   return `${devicePrefix}browser`.trim();
 }
 
+/**
+ * Infers high-level device class from user agent hints.
+ */
 function detectDeviceType(): string | undefined {
   if (typeof navigator === 'undefined') {
     return undefined;
@@ -70,6 +79,9 @@ function detectDeviceType(): string | undefined {
   return 'desktop';
 }
 
+/**
+ * Detects the visitor operating system from platform and user agent data.
+ */
 function detectOS(): string | undefined {
   if (typeof navigator === 'undefined') {
     return undefined;
@@ -88,6 +100,9 @@ function detectOS(): string | undefined {
   return undefined;
 }
 
+/**
+ * Resolves visitor source from UTM parameters or document referrer.
+ */
 function parseSource(utmSource?: string, referrer?: string): string | undefined {
   if (utmSource) {
     return titleCase(utmSource);
@@ -110,6 +125,9 @@ function parseSource(utmSource?: string, referrer?: string): string | undefined 
   }
 }
 
+/**
+ * Reads page navigation timing duration in milliseconds.
+ */
 function getLoadMs(): number | undefined {
   if (typeof performance === 'undefined') {
     return undefined;
@@ -122,6 +140,9 @@ function getLoadMs(): number | undefined {
   return Math.round(nav.duration);
 }
 
+/**
+ * Extracts a readable location hint from the browser timezone identifier.
+ */
 function detectTimezoneLocation(): string | undefined {
   try {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -138,6 +159,9 @@ function detectTimezoneLocation(): string | undefined {
   }
 }
 
+/**
+ * Fetches approximate location information from an IP geolocation endpoint.
+ */
 async function ipLocation(): Promise<string | undefined> {
   try {
     const response = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
@@ -160,6 +184,9 @@ async function ipLocation(): Promise<string | undefined> {
   }
 }
 
+/**
+ * Resolves best-effort visitor location from UTM params, IP lookup, then timezone.
+ */
 async function resolveLocationFromClient(params: URLSearchParams): Promise<string | undefined> {
   const utmLocation =
     params.get('utm_location') ??
@@ -179,6 +206,9 @@ async function resolveLocationFromClient(params: URLSearchParams): Promise<strin
   return detectTimezoneLocation();
 }
 
+/**
+ * Renders the personalized homepage hero with progressively revealed visitor details.
+ */
 export function HomeHero({ imageUrl, title, subtitle }: HomeHeroProps) {
   const [data, setData] = useState<HeroData>({});
   const prefersReducedMotion = useReducedMotion();

@@ -5,6 +5,9 @@ type ProgressProps = {
   className?: string;
 };
 
+/**
+ * Displays a horizontal progress bar clamped to the range 0-100.
+ */
 export function Progress({ value, className }: ProgressProps) {
   const clamped = Math.max(0, Math.min(100, value));
 

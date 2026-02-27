@@ -5,6 +5,9 @@ import { Progress } from '@/components/ui/progress';
 import { getSkills, sanityImageUrl } from '@/lib/sanity';
 import type { Skill } from '@/lib/types';
 
+/**
+ * Sort comparator for highest-to-lowest skill experience ordering.
+ */
 function compareExperience(a: Skill, b: Skill): number {
   const aExp = Number.parseInt(a.experience ?? '0', 10);
   const bExp = Number.parseInt(b.experience ?? '0', 10);
@@ -13,6 +16,9 @@ function compareExperience(a: Skill, b: Skill): number {
   return 0;
 }
 
+/**
+ * Groups skills by category after applying the default experience sort.
+ */
 function groupSkills(skills: Skill[]): Record<string, Skill[]> {
   const grouped: Record<string, Skill[]> = {};
   const sorted = [...skills].sort(compareExperience);
@@ -25,6 +31,9 @@ function groupSkills(skills: Skill[]): Record<string, Skill[]> {
   return grouped;
 }
 
+/**
+ * Skills listing route grouped by category.
+ */
 export default async function SkillsPage() {
   const skills = await getSkills();
   const grouped = groupSkills(skills);

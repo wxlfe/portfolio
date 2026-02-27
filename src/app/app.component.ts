@@ -53,6 +53,9 @@ export class AppComponent implements OnInit {
     ];
   }
 
+  /**
+   * Tracks active navigation state and emits GA page view events.
+   */
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       this.activeLinkIndex = this.navLinks.indexOf(

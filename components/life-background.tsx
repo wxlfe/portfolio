@@ -6,10 +6,16 @@ const CELL_SIZE = 16;
 const STEP_MS = 120;
 const INITIAL_DENSITY = 0.18;
 
+/**
+ * Converts a grid coordinate into the linear array index used by the automaton state.
+ */
 function indexFor(col: number, row: number, cols: number): number {
   return row * cols + col;
 }
 
+/**
+ * Renders a canvas-based Conway's Game of Life background.
+ */
 export function LifeBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 

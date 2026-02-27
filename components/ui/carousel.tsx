@@ -17,6 +17,9 @@ type CarouselContextValue = {
 
 const CarouselContext = React.createContext<CarouselContextValue | null>(null);
 
+/**
+ * Returns the active carousel context or throws if used outside the provider.
+ */
 function useCarousel() {
   const context = React.useContext(CarouselContext);
   if (!context) {
@@ -34,6 +37,9 @@ type CarouselProps = {
   children: React.ReactNode;
 };
 
+/**
+ * Provides the carousel container and keyboard/navigation controls.
+ */
 export function Carousel({
   orientation = 'horizontal',
   opts,
@@ -110,6 +116,9 @@ export function Carousel({
   );
 }
 
+/**
+ * Renders the scroll viewport and content track for carousel items.
+ */
 export function CarouselContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   const { carouselRef } = useCarousel();
 
@@ -120,10 +129,16 @@ export function CarouselContent({ className, ...props }: React.HTMLAttributes<HT
   );
 }
 
+/**
+ * Wraps one carousel slide item.
+ */
 export function CarouselItem({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return <div className={cn('ui-carousel-item', className)} role="group" aria-roledescription="slide" {...props} />;
 }
 
+/**
+ * Renders the previous-slide navigation button.
+ */
 export function CarouselPrevious({ className, ...props }: React.ComponentProps<typeof Button>) {
   const { scrollPrev, canScrollPrev } = useCarousel();
 
@@ -142,6 +157,9 @@ export function CarouselPrevious({ className, ...props }: React.ComponentProps<t
   );
 }
 
+/**
+ * Renders the next-slide navigation button.
+ */
 export function CarouselNext({ className, ...props }: React.ComponentProps<typeof Button>) {
   const { scrollNext, canScrollNext } = useCarousel();
 

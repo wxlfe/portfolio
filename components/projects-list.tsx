@@ -11,6 +11,9 @@ type Props = {
   projects: Project[];
 };
 
+/**
+ * Sort comparator for newest-to-oldest project year ordering.
+ */
 function compareYear(a: Project, b: Project): number {
   const aYear = Number.parseInt(a.year, 10);
   const bYear = Number.parseInt(b.year, 10);
@@ -19,12 +22,18 @@ function compareYear(a: Project, b: Project): number {
   return 0;
 }
 
+/**
+ * Sort comparator for case-sensitive alphabetical project name ordering.
+ */
 function compareName(a: Project, b: Project): number {
   if (a.title < b.title) return -1;
   if (a.title > b.title) return 1;
   return 0;
 }
 
+/**
+ * Renders sortable project cards with links to project detail routes.
+ */
 export function ProjectsList({ projects }: Props) {
   const [sortBy, setSortBy] = useState('Year');
 
