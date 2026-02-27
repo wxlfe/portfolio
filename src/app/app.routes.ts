@@ -7,6 +7,9 @@ import { ProjectComponent } from './project/project.component';
 import { SkillComponent } from './skill/skill.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+/**
+ * Client-side Angular route definitions.
+ */
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'projects', component: ProjectsComponent, pathMatch: 'full' },

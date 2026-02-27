@@ -7,6 +7,9 @@ import { SanityImagePipe } from './sanity-image.pipe';
   name: 'portableText',
   standalone: true,
 })
+/**
+ * Angular pipe that renders Portable Text rich content as HTML.
+ */
 export class PortableTextPipe implements PipeTransform {
   constructor(private sanityImagePipe: SanityImagePipe) {}
 
@@ -17,6 +20,9 @@ export class PortableTextPipe implements PipeTransform {
     },
   };
 
+  /**
+   * Converts Portable Text blocks into HTML for Angular templates.
+   */
   transform(value: PortableTextBlock[]): string {
     return toHTML(value, { components: this.components });
   }

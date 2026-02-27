@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './page-not-found.component.html',
   styleUrl: './page-not-found.component.sass'
 })
+/**
+ * Fallback Angular route component for unknown paths.
+ */
 export class PageNotFoundComponent {
 
 }

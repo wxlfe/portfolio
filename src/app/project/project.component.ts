@@ -37,6 +37,9 @@ import { MatChipsModule } from '@angular/material/chips';
     },
   ],
 })
+/**
+ * Angular project detail component resolved from the current route slug.
+ */
 export class ProjectComponent {
   data: any;
 
@@ -50,6 +53,9 @@ export class ProjectComponent {
     });
   }
 
+  /**
+   * Fetches and stores a single project by slug.
+   */
   async getProject(slug: string): Promise<any> {
     const data = await this.sanityService.getProject(slug);
     this.data = data[0];

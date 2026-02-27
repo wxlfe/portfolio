@@ -39,6 +39,9 @@ import { MatCardModule } from '@angular/material/card';
     },
   ],
 })
+/**
+ * Angular skill detail component resolved from the current route slug.
+ */
 export class SkillComponent {
   data: any;
 
@@ -52,6 +55,9 @@ export class SkillComponent {
     });
   }
 
+  /**
+   * Fetches and stores a single skill by slug.
+   */
   async getSkill(slug: string): Promise<any> {
     const data = await this.sanityService.getSkill(slug);
     this.data = data[0];

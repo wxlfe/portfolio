@@ -21,15 +21,24 @@ import { ionMail, ionLogoGithub, ionLogoLinkedin } from '@ng-icons/ionicons';
   ],
   providers: [provideIcons({ ionMail, ionLogoGithub, ionLogoLinkedin })],
 })
+/**
+ * Angular homepage component that renders profile hero content.
+ */
 export class HomeComponent implements OnInit {
   data: any;
 
   constructor(private sanityService: SanityService) {}
 
+  /**
+   * Loads homepage data for the hero section.
+   */
   ngOnInit(): void {
     this.getHomepage();
   }
 
+  /**
+   * Retrieves and stores the homepage document.
+   */
   async getHomepage(): Promise<any> {
     const data = await this.sanityService.getHomepage();
     this.data = data[0];

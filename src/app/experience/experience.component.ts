@@ -38,15 +38,24 @@ import { MatButtonModule } from '@angular/material/button';
     },
   ],
 })
+/**
+ * Angular experience timeline component.
+ */
 export class ExperienceComponent implements OnInit {
   data: any;
 
   constructor(private sanityService: SanityService, private router: Router) {}
 
+  /**
+   * Loads experience timeline data.
+   */
   ngOnInit(): void {
     this.getExperience();
   }
 
+  /**
+   * Fetches and stores job experience entries.
+   */
   async getExperience(): Promise<any> {
     const data = await this.sanityService.getExperience();
     console.log(data);
@@ -54,6 +63,9 @@ export class ExperienceComponent implements OnInit {
     return data;
   }
 
+  /**
+   * Placeholder navigation hook for skill deep links.
+   */
   goToSkill(slug: string): void {
     this.router.navigate([]);
   }

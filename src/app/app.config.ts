@@ -7,6 +7,9 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { provideServiceWorker } from '@angular/service-worker';
 
+/**
+ * Base Angular application providers shared by browser and server bootstraps.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),

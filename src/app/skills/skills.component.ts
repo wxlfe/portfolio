@@ -25,16 +25,25 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './skills.component.sass',
   providers: [provideIcons({ ionArrowForwardCircle })],
 })
+/**
+ * Angular skills list component with grouping by category.
+ */
 export class SkillsComponent implements OnInit {
   data: any;
   categories: any = [];
 
   constructor(private sanityService: SanityService, private router: Router) {}
 
+  /**
+   * Loads skill data on component init.
+   */
   ngOnInit(): void {
     this.getSkills();
   }
 
+  /**
+   * Fetches skills and groups them by category.
+   */
   async getSkills() {
     const data = await this.sanityService.getSkills();
     this.data = this.groupBy(data, 'category');
@@ -43,6 +52,9 @@ export class SkillsComponent implements OnInit {
     return this.data;
   }
 
+  /**
+   * Groups objects by the provided key after sorting by experience.
+   */
   groupBy(objectArray: any, property: any) {
     objectArray.sort(this.compareExperience);
     return objectArray.reduce((acc: any, obj: any) => {
@@ -52,6 +64,9 @@ export class SkillsComponent implements OnInit {
     }, {});
   }
 
+  /**
+   * Sort comparator for descending skill experience.
+   */
   compareExperience(a: any, b: any) {
     if (parseInt(a.experience) > parseInt(b.experience)) {
       return -1;

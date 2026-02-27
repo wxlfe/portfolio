@@ -27,6 +27,9 @@ declare const gtag: Function;
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })
+/**
+ * Root Angular shell component with top-level navigation.
+ */
 export class AppComponent implements OnInit {
   title = 'portfolio';
   navLinks: any[];
