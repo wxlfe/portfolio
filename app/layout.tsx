@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SiteHeader } from '@/components/site-header';
 import { LifeBackground } from '@/components/life-background';
 import { PwaRegister } from '@/components/pwa-register';
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Script id="gtag-init" strategy="lazyOnload">
           {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-5FXEL17TZ7');`}
         </Script>
+        <SpeedInsights />
       </body>
     </html>
   );
