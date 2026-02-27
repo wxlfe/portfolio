@@ -5,11 +5,8 @@
 /.next
 /out
 
-# angular legacy artifacts
-/.angular
-/dist
+# legacy build artifacts
 /tmp
-/out-tsc
 
 # production
 /build

@@ -1,6 +1,6 @@
 # Portfolio (Next.js)
 
-This project has been migrated from Angular to Next.js with App Router while preserving the existing visual style and Sanity CMS integration.
+This project is built with Next.js App Router while preserving the existing visual style and Sanity CMS integration.
 
 ## Development
 
@@ -21,7 +21,7 @@ npm run start
 
 ## Environment
 
-Optional environment variables (defaults match previous Angular config):
+Optional environment variables:
 
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` (default: `83vjz0lc`)
 - `NEXT_PUBLIC_SANITY_DATASET` (default: `production`)
