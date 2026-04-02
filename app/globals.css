@@ -459,6 +459,7 @@ main {
 
 .hero_contact_links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
 }
 
@@ -483,6 +484,20 @@ main {
 .hero_contact_link svg {
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.hero_contact_link_resume {
+  gap: 0.45rem;
+  width: auto;
+  padding: 0 0.95rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.hero_contact_link_resume span {
+  line-height: 1;
 }
 
 .hero_section_pivot {

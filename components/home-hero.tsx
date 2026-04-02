@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import { HomeHeroDetails } from '@/components/home-hero-details';
 
 /**
@@ -48,6 +48,10 @@ export function HomeHero({ imageUrl, title, subtitle }: HomeHeroProps) {
               </a>
               <a className="hero_contact_link" href="mailto:nate@wxlfe.dev" aria-label="Email Nate">
                 <Mail />
+              </a>
+              <a className="hero_contact_link hero_contact_link_resume" href="/assets/nate-wolfe-software-engineer-resume.pdf" download aria-label="Download Nate's resume">
+                <Download />
+                <span>Resume</span>
               </a>
             </div>
           </div>

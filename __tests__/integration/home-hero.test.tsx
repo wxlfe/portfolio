@@ -16,6 +16,7 @@ describe('HomeHero', () => {
     expect(screen.getByRole('link', { name: 'Nate on LinkedIn' })).toBeTruthy();
     expect(screen.getByRole('link', { name: 'Nate on GitHub' })).toBeTruthy();
     expect(screen.getByRole('link', { name: 'Email Nate' })).toBeTruthy();
+    expect(screen.getByRole('link', { name: "Download Nate's resume" })).toBeTruthy();
   });
 
   it('renders without profile image when imageUrl is missing', () => {
